@@ -11,8 +11,8 @@ export const people: Person[] = [
     languages: ['English', 'Hindi'],
     regId: 'MCI-1994-0012',
     bio: {
-      en: 'Pioneered 24×7 transparent emergency triage models and integrated multidisciplinary care teams at Lanthera Health.',
-      hi: 'लैंटर्न हेल्थ में 24x7 पारदर्शी आपातकालीन ट्राइएज मॉडल और एकीकृत बहुविषयक देखभाल टीमों की शुरुआत की।',
+      en: 'Focuses on 24×7 transparent emergency triage models and integrated multidisciplinary care teams.',
+      hi: '24x7 पारदर्शी आपातकालीन ट्राइएज मॉडल और एकीकृत बहुविषयक देखभाल टीमों पर केंद्रित।',
     },
     portrait: '/img/people/evelyn-lanthera.webp',
     qualifications: ['MD (Cardiology)', 'FRCP (London)', 'FACC'],
@@ -20,7 +20,7 @@ export const people: Person[] = [
     demoSlots: ['10:00 AM', '02:30 PM'],
   },
 
-  // Department Heads
+  // 1. Cardiology & Heart Care
   {
     id: 'doc-cardio-head',
     name: 'Dr. Aris Thorne',
@@ -40,6 +40,23 @@ export const people: Person[] = [
     demoSlots: ['09:30 AM', '11:00 AM', '03:00 PM'],
   },
   {
+    id: 'doc-cardio-1',
+    name: 'Dr. Kabir Mehta',
+    role: { en: 'Consultant Cardiologist', hi: 'परामर्शदाता कार्डियोलॉजिस्ट' },
+    kind: 'doctor',
+    dept: 'cardiology',
+    reportsTo: 'doc-cardio-head',
+    languages: ['English', 'Hindi', 'Gujarati'],
+    regId: 'MCI-2012-3311',
+    bio: { en: 'Specialist in non-invasive echocardiography and preventative cardiac care.', hi: 'नॉन-इन्वेसिव इकोकार्डियोग्राफी और निवारक कार्डियक केयर में विशेषज्ञ।' },
+    portrait: '/img/people/kabir-mehta.webp',
+    qualifications: ['MD', 'DM (Cardiology)'],
+    modes: ['in-person', 'tele'],
+    demoSlots: ['10:00 AM', '04:00 PM'],
+  },
+
+  // 2. Neurology & Brain Sciences
+  {
     id: 'doc-neuro-head',
     name: 'Dr. Miriam Chen',
     role: { en: 'Head of Neurology', hi: 'न्यूरोलॉजी विभाग प्रमुख' },
@@ -50,13 +67,30 @@ export const people: Person[] = [
     regId: 'MCI-2008-8832',
     bio: {
       en: 'Stroke neurologist with over 18 years of clinical experience in thrombolysis and neuro-critical care.',
-      hi: 'थ्रोम्बोलिसिस और न्यूरो-क्रिटिकल केयर में 18 से अधिक वर्षों के नैदानिक अनुभव के साथ स्ट्रोक न्यूरोलॉजिस्ट।',
+      hi: 'थ्रोम्बोलिसिस और न्यूरो-क्रिटिकल केयर में 18 से अधिक वर्षों के अनुभव के साथ स्ट्रोक न्यूरोलॉजिस्ट।',
     },
     portrait: '/img/people/miriam-chen.webp',
     qualifications: ['DM (Neurology)', 'MD (Pediatrics)'],
     modes: ['in-person', 'tele'],
     demoSlots: ['10:00 AM', '01:30 PM'],
   },
+  {
+    id: 'doc-neuro-1',
+    name: 'Dr. Sarah Lin',
+    role: { en: 'Consultant Neurologist', hi: 'परामर्शदाता न्यूरोलॉजिस्ट' },
+    kind: 'doctor',
+    dept: 'neurology',
+    reportsTo: 'doc-neuro-head',
+    languages: ['English', 'Hindi'],
+    regId: 'MCI-2014-8820',
+    bio: { en: 'Focuses on epilepsy management and nerve conduction diagnostic panels.', hi: 'मिर्गी प्रबंधन और नर्व कंडक्शन डायग्नोस्टिक पैनल पर ध्यान केंद्रित।' },
+    portrait: '/img/people/sarah-lin.webp',
+    qualifications: ['DM (Neurology)'],
+    modes: ['in-person', 'tele'],
+    demoSlots: ['09:30 AM', '01:00 PM'],
+  },
+
+  // 3. Pediatrics & Child Health
   {
     id: 'doc-peds-head',
     name: 'Dr. Rajesh Vardhan',
@@ -76,6 +110,23 @@ export const people: Person[] = [
     demoSlots: ['11:30 AM', '04:00 PM'],
   },
   {
+    id: 'doc-peds-1',
+    name: 'Dr. Priya Sharma',
+    role: { en: 'Consultant Pediatrician', hi: 'परामर्शदाता बाल रोग विशेषज्ञ' },
+    kind: 'doctor',
+    dept: 'pediatrics',
+    reportsTo: 'doc-peds-head',
+    languages: ['English', 'Hindi'],
+    regId: 'MCI-2015-4490',
+    bio: { en: 'Expert in pediatric respiratory allergies and childhood immunization schedules.', hi: 'बाल श्वास एलर्जी और बाल टीकाकरण अनुसूचियों में विशेषज्ञ।' },
+    portrait: '/img/people/priya-sharma.webp',
+    qualifications: ['MD (Pediatrics)'],
+    modes: ['in-person', 'tele'],
+    demoSlots: ['10:30 AM', '03:00 PM'],
+  },
+
+  // 4. Obstetrics & Women's Health
+  {
     id: 'doc-obgyn-head',
     name: 'Dr. Sunita Kapoor',
     role: { en: 'Head of Obstetrics & Gynecology', hi: 'स्त्री रोग विभाग प्रमुख' },
@@ -93,6 +144,23 @@ export const people: Person[] = [
     modes: ['in-person', 'tele'],
     demoSlots: ['10:30 AM', '02:00 PM'],
   },
+  {
+    id: 'doc-obgyn-1',
+    name: 'Dr. Meera Vasudevan',
+    role: { en: 'Consultant Gynecologist', hi: 'परामर्शदाता स्त्री रोग विशेषज्ञ' },
+    kind: 'doctor',
+    dept: 'obstetrics-gynecology',
+    reportsTo: 'doc-obgyn-head',
+    languages: ['English', 'Hindi', 'Tamil'],
+    regId: 'MCI-2013-6621',
+    bio: { en: 'Expert in adolescent gynecological health, PCOS clinics, and laparoscopic procedures.', hi: 'किशोर स्त्री रोग स्वास्थ्य, पीसीओएस क्लीनिक और लेप्रोस्कोपिक प्रक्रियाओं में विशेषज्ञ।' },
+    portrait: '/img/people/meera-vasudevan.webp',
+    qualifications: ['MS (Obstetrics)', 'DNB'],
+    modes: ['in-person', 'tele'],
+    demoSlots: ['09:00 AM', '01:00 PM'],
+  },
+
+  // 5. Orthopedics & Joint Replacement
   {
     id: 'doc-ortho-head',
     name: 'Dr. Marcus Vance',
@@ -112,6 +180,23 @@ export const people: Person[] = [
     demoSlots: ['09:00 AM', '03:30 PM'],
   },
   {
+    id: 'doc-ortho-1',
+    name: 'Dr. Rohan Deshmukh',
+    role: { en: 'Consultant Orthopedic Surgeon', hi: 'परामर्शदाता ऑर्थोपेडिक सर्जन' },
+    kind: 'doctor',
+    dept: 'orthopedics',
+    reportsTo: 'doc-ortho-head',
+    languages: ['English', 'Hindi', 'Marathi'],
+    regId: 'MCI-2011-8833',
+    bio: { en: 'Specialist in complex trauma reconstruction, arthroscopy, and spine rehabilitation.', hi: 'जटिल आघात पुनर्निर्माण, आर्थ्रोस्कोपी और रीढ़ के पुनर्वास में विशेषज्ञ।' },
+    portrait: '/img/people/rohan-deshmukh.webp',
+    qualifications: ['MS (Orthopedics)', 'FICS'],
+    modes: ['in-person', 'tele'],
+    demoSlots: ['11:00 AM', '04:00 PM'],
+  },
+
+  // 6. Medical & Surgical Oncology
+  {
     id: 'doc-onco-head',
     name: 'Dr. Ananya Roy',
     role: { en: 'Head of Medical Oncology', hi: 'ऑन्कोलॉजी विभाग प्रमुख' },
@@ -121,63 +206,31 @@ export const people: Person[] = [
     languages: ['English', 'Hindi', 'Bengali'],
     regId: 'MCI-2007-9912',
     bio: {
-      en: 'Medical oncologist leading precision medicine and targeted cancer therapy protocols.',
-      hi: 'प्रिसिजन मेडिसिन और लक्षित कैंसर थेरेपी प्रोटोकॉल का नेतृत्व करने वाले मेडिकल ऑन्कोलॉजिस्ट।',
+      en: 'Medical oncologist guiding precision medicine and targeted cancer therapy protocols.',
+      hi: 'प्रिसिजन मेडिसिन और लक्षित कैंसर थेरेपी प्रोटोकॉल का मार्गदर्शन करने वाले मेडिकल ऑन्कोलॉजिस्ट।',
     },
     portrait: '/img/people/ananya-roy.webp',
     qualifications: ['DM (Medical Oncology)', 'MD (Internal Medicine)'],
     modes: ['in-person', 'tele'],
     demoSlots: ['11:00 AM', '02:30 PM'],
   },
-
-  // Senior Attending Doctors
   {
-    id: 'doc-cardio-1',
-    name: 'Dr. Kabir Mehta',
-    role: { en: 'Consultant Cardiologist', hi: 'परामर्शदाता कार्डियोलॉजिस्ट' },
+    id: 'doc-onco-1',
+    name: 'Dr. Harshvardhan Iyer',
+    role: { en: 'Consultant Surgical Oncologist', hi: 'परामर्शदाता सर्जिकल ऑन्कोलॉजिस्ट' },
     kind: 'doctor',
-    dept: 'cardiology',
-    reportsTo: 'doc-cardio-head',
-    languages: ['English', 'Hindi', 'Gujarati'],
-    regId: 'MCI-2012-3311',
-    bio: { en: 'Specialist in non-invasive echocardiography and preventative cardiac care.', hi: 'नॉन-इन्वेसिव इकोकार्डियोग्राफी और निवारक कार्डियक केयर में विशेषज्ञ।' },
-    portrait: '/img/people/kabir-mehta.webp',
-    qualifications: ['MD', 'DM (Cardiology)'],
-    modes: ['in-person', 'tele'],
-    demoSlots: ['10:00 AM', '04:00 PM'],
-  },
-  {
-    id: 'doc-neuro-1',
-    name: 'Dr. Sarah Lin',
-    role: { en: 'Consultant Neurologist', hi: 'परामर्शदाता न्यूरोलॉजिस्ट' },
-    kind: 'doctor',
-    dept: 'neurology',
-    reportsTo: 'doc-neuro-head',
-    languages: ['English', 'Hindi'],
-    regId: 'MCI-2014-8820',
-    bio: { en: 'Focuses on epilepsy management and nerve conduction diagnostic panels.', hi: 'मिर्गी प्रबंधन और नर्व कंडक्शन डायग्नोस्टिक पैनल पर ध्यान केंद्रित।' },
-    portrait: '/img/people/sarah-lin.webp',
-    qualifications: ['DM (Neurology)'],
-    modes: ['in-person', 'tele'],
-    demoSlots: ['09:30 AM', '01:00 PM'],
-  },
-  {
-    id: 'doc-peds-1',
-    name: 'Dr. Priya Sharma',
-    role: { en: 'Consultant Pediatrician', hi: 'परामर्शदाता बाल रोग विशेषज्ञ' },
-    kind: 'doctor',
-    dept: 'pediatrics',
-    reportsTo: 'doc-peds-head',
-    languages: ['English', 'Hindi'],
-    regId: 'MCI-2015-4490',
-    bio: { en: 'Expert in pediatric respiratory allergies and childhood immunization schedules.', hi: 'बाल श्वास एलर्जी और बाल टीकाकरण अनुसूचियों में विशेषज्ञ।' },
-    portrait: '/img/people/priya-sharma.webp',
-    qualifications: ['MD (Pediatrics)'],
-    modes: ['in-person', 'tele'],
-    demoSlots: ['10:30 AM', '03:00 PM'],
+    dept: 'oncology',
+    reportsTo: 'doc-onco-head',
+    languages: ['English', 'Hindi', 'Tamil'],
+    regId: 'MCI-2010-4499',
+    bio: { en: 'Specialist in minimally invasive organ-preserving surgical resections and sentinel node biopsy.', hi: 'ऑर्गन-प्रिजर्विंग सर्जिकल रिसेक्शन्स और सेंटिनेल नोड बायोप्सी में विशेषज्ञ।' },
+    portrait: '/img/people/harshvardhan-iyer.webp',
+    qualifications: ['MCh (Surgical Oncology)', 'MS'],
+    modes: ['in-person'],
+    demoSlots: ['10:00 AM', '03:00 PM'],
   },
 
-  // Additional Department Heads for complete 12-department coverage
+  // 7. Emergency & Level-1 Trauma
   {
     id: 'doc-er-head',
     name: 'Dr. Vikram Malhotra',
@@ -197,6 +250,23 @@ export const people: Person[] = [
     demoSlots: ['24×7 Duty', '10:00 AM', '04:00 PM'],
   },
   {
+    id: 'doc-er-1',
+    name: 'Dr. Shalini Saxena',
+    role: { en: 'Consultant Emergency Physician', hi: 'परामर्शदाता आपातकालीन चिकित्सक' },
+    kind: 'doctor',
+    dept: 'emergency-trauma',
+    reportsTo: 'doc-er-head',
+    languages: ['English', 'Hindi'],
+    regId: 'MCI-2013-7744',
+    bio: { en: 'Expert in acute cardiac life support, toxicology emergencies, and pediatric trauma triage.', hi: 'एक्यूट कार्डियक लाइफ सपोर्ट, टॉक्सिकोलॉजी आपात स्थिति और पीडियाट्रिक ट्रॉमा ट्राइएज में विशेषज्ञ।' },
+    portrait: '/img/people/shalini-saxena.webp',
+    qualifications: ['MD (Emergency Medicine)', 'ACLS Certified'],
+    modes: ['in-person'],
+    demoSlots: ['24×7 Duty', '09:00 AM'],
+  },
+
+  // 8. Internal Medicine & General Care
+  {
     id: 'doc-internal-head',
     name: 'Dr. Alok Nath',
     role: { en: 'Head of Internal Medicine', hi: 'जनरल व इंटरनल मेडिसिन प्रमुख' },
@@ -214,6 +284,23 @@ export const people: Person[] = [
     modes: ['in-person', 'tele'],
     demoSlots: ['09:30 AM', '11:30 AM', '03:00 PM'],
   },
+  {
+    id: 'doc-internal-1',
+    name: 'Dr. Divya Aggarwal',
+    role: { en: 'Consultant Physician', hi: 'परामर्शदाता चिकित्सक' },
+    kind: 'doctor',
+    dept: 'internal-medicine',
+    reportsTo: 'doc-internal-head',
+    languages: ['English', 'Hindi', 'Punjabi'],
+    regId: 'MCI-2012-9901',
+    bio: { en: 'Specialist in adult metabolic disorders, chronic hypertension, and lifestyle medicine.', hi: 'वयस्क चयापचय विकारों, पुराने उच्च रक्तचाप और जीवनशैली चिकित्सा में विशेषज्ञ।' },
+    portrait: '/img/people/divya-aggarwal.webp',
+    qualifications: ['MD (Internal Medicine)'],
+    modes: ['in-person', 'tele'],
+    demoSlots: ['10:00 AM', '02:00 PM'],
+  },
+
+  // 9. Gastroenterology & Digestive Health
   {
     id: 'doc-gastro-head',
     name: 'Dr. Natasha Kapoor',
@@ -233,6 +320,23 @@ export const people: Person[] = [
     demoSlots: ['10:00 AM', '02:00 PM'],
   },
   {
+    id: 'doc-gastro-1',
+    name: 'Dr. Sameer Kulkarni',
+    role: { en: 'Consultant Gastroenterologist', hi: 'परामर्शदाता गैस्ट्रोएंटरोलॉजिस्ट' },
+    kind: 'doctor',
+    dept: 'gastroenterology',
+    reportsTo: 'doc-gastro-head',
+    languages: ['English', 'Hindi', 'Marathi'],
+    regId: 'MCI-2014-5511',
+    bio: { en: 'Focuses on fatty liver management, ERCP procedures, and acid reflux management.', hi: 'फैटी लिवर प्रबंधन, ईआरसीपी प्रक्रियाओं और एसिड रिफ्लक्स प्रबंधन पर ध्यान।' },
+    portrait: '/img/people/sameer-kulkarni.webp',
+    qualifications: ['DM (Gastroenterology)'],
+    modes: ['in-person', 'tele'],
+    demoSlots: ['11:30 AM', '03:30 PM'],
+  },
+
+  // 10. Pulmonology & Respiratory Medicine
+  {
     id: 'doc-pulmo-head',
     name: 'Dr. Siddharth Menon',
     role: { en: 'Head of Pulmonology & Critical Care', hi: 'पल्मोनोलॉजी व रेस्पिरेटरी केयर प्रमुख' },
@@ -250,6 +354,23 @@ export const people: Person[] = [
     modes: ['in-person', 'tele'],
     demoSlots: ['11:00 AM', '03:30 PM'],
   },
+  {
+    id: 'doc-pulmo-1',
+    name: 'Dr. Aarti Nair',
+    role: { en: 'Consultant Pulmonologist', hi: 'परामर्शदाता पल्मोनोलॉजिस्ट' },
+    kind: 'doctor',
+    dept: 'pulmonology',
+    reportsTo: 'doc-pulmo-head',
+    languages: ['English', 'Hindi', 'Malayalam'],
+    regId: 'MCI-2015-3388',
+    bio: { en: 'Specialist in sleep disorder breathing, allergy skin testing, and post-viral lung recovery.', hi: 'नींद विकार श्वास, एलर्जी त्वचा परीक्षण और पोस्ट-वायरल फेफड़ों की रिकवरी में विशेषज्ञ।' },
+    portrait: '/img/people/aarti-nair.webp',
+    qualifications: ['MD (Pulmonology)', 'DTCD'],
+    modes: ['in-person', 'tele'],
+    demoSlots: ['09:30 AM', '01:30 PM'],
+  },
+
+  // 11. Dermatology & Skin Health
   {
     id: 'doc-derm-head',
     name: 'Dr. Meera Nambiar',
@@ -269,6 +390,23 @@ export const people: Person[] = [
     demoSlots: ['10:30 AM', '04:30 PM'],
   },
   {
+    id: 'doc-derm-1',
+    name: 'Dr. Karan Joshi',
+    role: { en: 'Consultant Dermatologist', hi: 'परामर्शदाता डर्मेटोलॉजिस्ट' },
+    kind: 'doctor',
+    dept: 'dermatology',
+    reportsTo: 'doc-derm-head',
+    languages: ['English', 'Hindi', 'Gujarati'],
+    regId: 'MCI-2016-1144',
+    bio: { en: 'Specialist in trichology, psoriasis clinics, and advanced patch allergy testing.', hi: 'ट्राइकोलॉजी, सोरायसिस क्लीनिक और उन्नत पैच एलर्जी परीक्षण में विशेषज्ञ।' },
+    portrait: '/img/people/karan-joshi.webp',
+    qualifications: ['MD (Dermatology)'],
+    modes: ['in-person', 'tele'],
+    demoSlots: ['11:00 AM', '03:00 PM'],
+  },
+
+  // 12. Nephrology & Kidney Care
+  {
     id: 'doc-nephro-head',
     name: 'Dr. Vikramaditya Rao',
     role: { en: 'Head of Nephrology & Kidney Care', hi: 'नेफ्रोलॉजी व किडनी केयर प्रमुख' },
@@ -286,4 +424,20 @@ export const people: Person[] = [
     modes: ['in-person', 'tele'],
     demoSlots: ['09:00 AM', '01:30 PM'],
   },
+  {
+    id: 'doc-nephro-1',
+    name: 'Dr. Sneha Reddy',
+    role: { en: 'Consultant Nephrologist', hi: 'परामर्शदाता नेफ्रोलॉजिस्ट' },
+    kind: 'doctor',
+    dept: 'nephrology',
+    reportsTo: 'doc-nephro-head',
+    languages: ['English', 'Hindi', 'Telugu'],
+    regId: 'MCI-2015-7799',
+    bio: { en: 'Specialist in diabetic nephropathy management, peritoneal dialysis, and preventive renal care.', hi: 'डायबिटिक नेफ्रोपैथी प्रबंधन, पेरिटोनियल डायलिसिस और निवारक रीनल केयर में विशेषज्ञ।' },
+    portrait: '/img/people/sneha-reddy.webp',
+    qualifications: ['DM (Nephrology)'],
+    modes: ['in-person', 'tele'],
+    demoSlots: ['10:00 AM', '02:30 PM'],
+  },
 ];
+

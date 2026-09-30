@@ -1,10 +1,12 @@
-import { Outlet, NavLink } from 'react-router';
+import { Outlet, NavLink, useSearchParams } from 'react-router';
 import { FileText, ShieldCheck, Clock, Calendar } from 'lucide-react';
 import { useLocale } from '../hooks/useLocale';
 
 export function PortalLayout() {
   const { locale } = useLocale();
   const isHi = locale === 'hi';
+  const [searchParams] = useSearchParams();
+  const activeTab = searchParams.get('tab') || 'report';
 
   return (
     <div className="portal-layout min-h-screen flex flex-col md:flex-row bg-[var(--bg)]">
@@ -23,9 +25,9 @@ export function PortalLayout() {
           <NavLink
             to="/portal"
             end
-            className={({ isActive }) =>
+            className={() =>
               `p-3 rounded-[var(--radius-sm)] flex items-center gap-2.5 transition-all hover-lift ${
-                isActive
+                activeTab === 'report'
                   ? 'bg-[var(--accent)] text-[var(--accent-ink)] font-bold shadow-md'
                   : 'text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--surface)] border border-transparent hover:border-[var(--line)]'
               }`
@@ -37,9 +39,9 @@ export function PortalLayout() {
 
           <NavLink
             to="/portal?tab=book"
-            className={({ isActive }) =>
+            className={() =>
               `p-3 rounded-[var(--radius-sm)] flex items-center gap-2.5 transition-all hover-lift ${
-                isActive
+                activeTab === 'book'
                   ? 'bg-[var(--accent)] text-[var(--accent-ink)] font-bold shadow-md'
                   : 'text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--surface)] border border-transparent hover:border-[var(--line)]'
               }`
@@ -51,9 +53,9 @@ export function PortalLayout() {
 
           <NavLink
             to="/portal?tab=prep"
-            className={({ isActive }) =>
+            className={() =>
               `p-3 rounded-[var(--radius-sm)] flex items-center gap-2.5 transition-all hover-lift ${
-                isActive
+                activeTab === 'prep'
                   ? 'bg-[var(--accent)] text-[var(--accent-ink)] font-bold shadow-md'
                   : 'text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--surface)] border border-transparent hover:border-[var(--line)]'
               }`
@@ -65,9 +67,9 @@ export function PortalLayout() {
 
           <NavLink
             to="/portal?tab=ledger"
-            className={({ isActive }) =>
+            className={() =>
               `p-3 rounded-[var(--radius-sm)] flex items-center gap-2.5 transition-all hover-lift ${
-                isActive
+                activeTab === 'ledger'
                   ? 'bg-[var(--accent)] text-[var(--accent-ink)] font-bold shadow-md'
                   : 'text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--surface)] border border-transparent hover:border-[var(--line)]'
               }`
