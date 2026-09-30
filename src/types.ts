@@ -136,8 +136,9 @@ export interface Article {
   slug: string;
   dept: string;
   title: I18n;
+  summary: I18n;
   layers: { s30: I18n; m3: I18n; deep: I18n };
-  glossary: string[];
+  glossary: { term: string; def: I18n }[];
   askDoctor: I18n[];
   sources: string[];
   reviewedBy: string;
@@ -149,8 +150,19 @@ export interface Report {
   title: string;
   date: string;
   dept: string;
-  values: { name: string; value: number; unit: string; refRange: [number, number] }[];
+  patientName: string;
+  values: { name: string; value: number; unit: string; refRange: [number, number]; status: 'normal' | 'low' | 'high'; plainExp: I18n }[];
   plainNotes: I18n;
+}
+
+export interface CareerOption {
+  id: string;
+  title: I18n;
+  dept: string;
+  location: string;
+  type: 'Full-time' | 'Part-time' | 'Shift';
+  experience: string;
+  reqs: I18n[];
 }
 
 export interface WaitToken {

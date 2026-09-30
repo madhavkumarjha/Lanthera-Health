@@ -65,7 +65,7 @@ Phase 7 — Clear Ledger, Health Packages & International (Complete)
   - Built `/book` appointment booking wizard with department/doctor prefilling and demo confirmation modal.
   - Added unit test suite [`tests/unit/phase6.test.tsx`](file:///d:/healthcare/tests/unit/phase6.test.tsx).
 
-- **Phase 7 — Clear Ledger, Health Packages & International** (commit: `phase-7-complete`)
+- **Phase 7 — Clear Ledger, Health Packages & International** (commit: `f967745`)
   - Created financial scenario dataset in [`src/data/ledger.ts`](file:///d:/healthcare/src/data/ledger.ts) with room tier multipliers (`ward`, `semi`, `private`, `icu`), volatility alerts, empaneled insurance list, and 0% EMI schemes.
   - Created health screening catalog in [`src/data/packages.ts`](file:///d:/healthcare/src/data/packages.ts) with category tags, test inclusions, prep guidelines, and home sample collection flags.
   - Created international desk dataset in [`src/data/international.ts`](file:///d:/healthcare/src/data/international.ts) with 4-step medical travel roadmap, MVIL assistance, multilingual interpreter support, and contact channels.
@@ -76,17 +76,31 @@ Phase 7 — Clear Ledger, Health Packages & International (Complete)
   - Built `/diagnostics` diagnostic directory with code search, preparation drawers, and sample booking modal.
   - Added unit test suite [`tests/unit/phase7.test.tsx`](file:///d:/healthcare/tests/unit/phase7.test.tsx).
 
+- **Phase 8 — Patient Knowledge & Plain-Language Portal** (commit: `phase-8-complete`)
+  - Created Patient Knowledge Library articles dataset in [`src/data/articles.ts`](file:///d:/healthcare/src/data/articles.ts) supporting the 3-Layer Format (30-Second Summary, 3-Minute Understanding, Deep Dive Clinical Guidelines), medical glossary, doctor questions, and peer reviewer credits.
+  - Created Plain-Language Report Explainer dataset in [`src/data/portal.ts`](file:///d:/healthcare/src/data/portal.ts) translating lab markers (Serum Creatinine, Fasting Glucose, Lipid LDL/HDL) into plain English with reference ranges.
+  - Created Careers dataset in [`src/data/careers.ts`](file:///d:/healthcare/src/data/careers.ts) for clinical & nursing roles.
+  - Built `/understand` Knowledge Hub and `/understand/:slug` detail view featuring 3-layer tab reader, medical glossary popovers, and doctor questions checklist.
+  - Built `/portal` Plain-Language Report Explainer with demo report selector, color-coded status markers, and print layout.
+  - Built `/careers` job catalog with department filters and application wizard modal.
+  - Built `/about` hospital story page with embedded `NightWatchStory` component.
+  - Built `/contact` emergency hotline directory and campus directions pointer.
+  - Built `/sitemap` visual semantic sitemap listing all 28 routes grouped logically.
+  - Built `/accessibility` WCAG 2.1 AA statement detailing screen reader, keyboard ⌘K, dynamic text scaling, and Calm Mode features.
+  - Built `/demo-disclosure` compliance notice detailing non-clinical advice limits, synthetic demo profiles, non-binding prices, and emergency 112/102 warning.
+  - Added unit test suite [`tests/unit/phase8.test.tsx`](file:///d:/healthcare/tests/unit/phase8.test.tsx).
+
 ## Next phase
-**Phase 8 — Patient Knowledge & Plain-Language Portal**
+**Phase 9 — Final Audit, Verification & Polishing**
 *Scope (from File 08):*
-Condition guide, 3-layer article format (30s / 3m / Deep dive), plain-language medical report explainer (`/portal`), careers page (`/careers`), and static policy pages (`/about`, `/contact`, `/sitemap`, `/accessibility`, `/demo-disclosure`).
+End-to-end quality validation across all 28 routes, dark/light theme audit, calm mode audit, i18n parity check, denylist compliance check, vitest unit tests execution, and final production build.
 
 ## Decisions & assumptions
-- All price calculator estimates carry explicit non-binding compliance disclaimers per File 01 rules.
-- Diagnostic TAT turn-around times are stated in hours with clear fasting guidelines.
+- All static policy pages strictly incorporate File 01 compliance guidelines (fictional profile disclaimers, non-binding pricing notices, emergency dispatch warnings).
+- All 28 routes are fully implemented and navigable without stub fallbacks.
 
 ## Open questions / [VERIFY] items
 - None.
 
 ## Known issues
-- None. All quality checks (typecheck, lint, vitest 28/28, check:i18n, check:denylist, build) green.
+- None. All quality checks (typecheck, lint, vitest 35/35, check:i18n, check:denylist, build) green.
