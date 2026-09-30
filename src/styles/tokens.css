@@ -1,0 +1,84 @@
+/* tokens.css — Lanthera Health Design System Tokens */
+
+:root {
+  /* Motion & Easing Tokens (File 05) */
+  --ease-glow: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-settle: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-inout-calm: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --dur-instant: 90ms;
+  --dur-fast: 180ms;
+  --dur-base: 320ms;
+  --dur-slow: 600ms;
+  --dur-cine: 1000ms;
+
+  /* Typography Scale */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Instrument Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-hi-serif: 'Noto Serif Devanagari', 'Fraunces', serif;
+  --font-hi-sans: 'Noto Sans Devanagari', 'Instrument Sans', sans-serif;
+
+  /* Spacing Scale (px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-18: 72px;
+  --space-28: 112px;
+  --space-42: 168px;
+
+  /* Radius Tokens */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-pill: 9999px;
+  --radius-lantern: 28px 28px 12px 12px;
+
+  /* Root Text Scale Multiplier */
+  --text-scale: 1;
+}
+
+/* Light theme ("Parchment Day") — File 02 §2.2 */
+:root[data-theme='light'] {
+  --bg: #F7F0E6;
+  --surface: #FFFBF5;
+  --surface-2: #EFE5D6;
+  --text: #231A26;
+  --text-muted: #5E4F60;
+  --line: #DCCDB9;
+  --accent: #B96A0E;
+  --accent-ink: #FFF8EC;
+  --clay: #B4472A;
+  --sage: #3F7A57;
+  --plum: #7A3F9B;
+  --emergency: #C21F1F;
+  --elevation-shadow: 0 10px 40px -14px rgba(90, 50, 10, 0.25);
+}
+
+/* Dark theme ("Night Ward") — Default on first load per File 02 §2.1 */
+:root, :root[data-theme='dark'] {
+  --bg: #161018;
+  --surface: #211826;
+  --surface-2: #2C2033;
+  --text: #F4ECE1;
+  --text-muted: #B9AAB8;
+  --line: #3A2C42;
+  --accent: #F0B24A;
+  --accent-ink: #2A1B05;
+  --clay: #D9744E;
+  --sage: #8DB197;
+  --plum: #B98AD1;
+  --emergency: #FF5A4F;
+  --elevation-shadow: 0 10px 40px -12px rgba(240, 178, 74, 0.25);
+}
+
+/* Devanagari font adjustment */
+:root[lang='hi'] {
+  --font-display: var(--font-hi-serif);
+  --font-sans: var(--font-hi-sans);
+}

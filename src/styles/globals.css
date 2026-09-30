@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+/* Font imports from @fontsource */
+@import "@fontsource/fraunces/300.css";
+@import "@fontsource/fraunces/400.css";
+@import "@fontsource/fraunces/600.css";
+@import "@fontsource/fraunces/700.css";
+
+@import "@fontsource/instrument-sans/400.css";
+@import "@fontsource/instrument-sans/500.css";
+@import "@fontsource/instrument-sans/600.css";
+
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+
+@import "@fontsource/noto-serif-devanagari/400.css";
+@import "@fontsource/noto-serif-devanagari/700.css";
+
+@import "@fontsource/noto-sans-devanagari/400.css";
+@import "@fontsource/noto-sans-devanagari/600.css";
+
+/* Base styles using tokens */
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: calc(16px * var(--text-scale));
+  line-height: 1.65;
+  transition: background-color 320ms var(--ease-glow), color 320ms var(--ease-glow);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Focus indicator per File 02 §4 */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}

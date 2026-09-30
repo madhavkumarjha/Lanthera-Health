@@ -1,0 +1,12 @@
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  header, footer, nav, .demo-banner, .emergency-pill {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
