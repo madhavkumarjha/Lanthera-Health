@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bldgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#211826" />
+      <stop offset="100%" stop-color="#161018" />
+    </linearGradient>
+    <filter id="winGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+  </defs>
+  
+  <!-- Hospital Building Silhouette -->
+  <rect x="20" y="30" width="520" height="250" rx="16" fill="url(#bldgGrad)" stroke="#3A2C42" stroke-width="2" />
+  
+  <!-- Roof Lantern Mark Ornament -->
+  <path d="M 250 30 L 310 30 L 300 10 L 260 10 Z" fill="#F0B24A" opacity="0.8" />
+  <circle cx="280" cy="20" r="4" fill="#FFFBF5" />
+
+  <!-- 40 Windows Grid -->
+  <g id="windows-grid">
+    
+    <rect id="win-1" x="40" y="50" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-2" x="88" y="50" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-3" x="136" y="50" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-4" x="184" y="50" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-5" x="232" y="50" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-6" x="280" y="50" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-7" x="328" y="50" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-8" x="376" y="50" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-9" x="424" y="50" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-10" x="472" y="50" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-11" x="40" y="105" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-12" x="88" y="105" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-13" x="136" y="105" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-14" x="184" y="105" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-15" x="232" y="105" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-16" x="280" y="105" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-17" x="328" y="105" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-18" x="376" y="105" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-19" x="424" y="105" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-20" x="472" y="105" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-21" x="40" y="160" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-22" x="88" y="160" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-23" x="136" y="160" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-24" x="184" y="160" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-25" x="232" y="160" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-26" x="280" y="160" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-27" x="328" y="160" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-28" x="376" y="160" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-29" x="424" y="160" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-30" x="472" y="160" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-31" x="40" y="215" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-32" x="88" y="215" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-33" x="136" y="215" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-34" x="184" y="215" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-35" x="232" y="215" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-36" x="280" y="215" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-37" x="328" y="215" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-38" x="376" y="215" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-39" x="424" y="215" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+    <rect id="win-40" x="472" y="215" width="32" height="40" rx="4" fill="#2C2033" stroke="#3A2C42" stroke-width="1.5" class="building-window transition-all duration-500" />
+  </g>
+
+  <!-- Ground Floor Entrance Portal -->
+  <path d="M 230 280 L 330 280 L 330 240 Q 280 220 230 240 Z" fill="#2C2033" stroke="#F0B24A" stroke-width="2" />
+  <text x="280" y="265" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="11" font-weight="600" fill="#F0B24A" letter-spacing="0.2em">LANTHERA 24×7</text>
+</svg>

@@ -1,7 +1,7 @@
 # PROGRESS.md — Project Memory & Tracking
 
 ## Current phase
-Phase 3 — Lantern Guide (highest utility) (Complete)
+Phase 4 — The Night Watch + Home story (Complete)
 
 ## Completed phases
 - **Phase 0 — SETUP ONLY** (commit: `517c33f`)
@@ -32,25 +32,33 @@ Phase 3 — Lantern Guide (highest utility) (Complete)
   - Built interactive `HomePage` hero with Fraunces Display XL headline (*"You are not alone in this. Here is what happens next."*), interactive dusk-to-night ambient glow, and 8 lantern-shaped signature route tiles
   - Added unit test suite `tests/unit/phase2.test.tsx`
 
-- **Phase 3 — Lantern Guide (highest utility)** (commit: `phase-3-complete`)
+- **Phase 3 — Lantern Guide (highest utility)** (commit: `44d0641`)
   - Created transparent decision rules table (`src/data/guide-rules.ts`) with priority-based evaluation logic for care levels (`emergency`, `urgent`, `specialist`, `routine`, `info`).
   - Created Zustand state store (`src/store/guideStore.ts`) supporting step navigation, red-flag checks, and session restoration.
   - Built PDF Visit Prep Sheet generator (`src/utils/pdfGenerator.ts`) creating branded A4 single-page prep sheets in EN/HI.
-  - Built full interactive stepped `GuidePage` (`/guide`) featuring mandatory disclaimer banner, 4-step questionnaire (Step 0: Red flags, Step 1: Target audience, Step 2: Duration & impact, Step 3: Conditions), result view with care level card, interactive "What to bring" packing checklist, "Questions to ask doctor" list, arrival steps roadmap, PDF download, summary copy, print, and transparent rule table modal drawer.
-  - Added unit test suite `tests/unit/phase3.test.tsx` for red-flag routing, priority logic, store state resets, and disclaimer rendering.
+  - Built full interactive stepped `GuidePage` (`/guide`) featuring mandatory disclaimer banner, 4-step questionnaire, result view with care level card, interactive "What to bring" packing checklist, "Questions to ask doctor" list, arrival steps roadmap, PDF download, summary copy, print, and transparent rule table modal drawer.
+  - Added unit test suite `tests/unit/phase3.test.tsx`.
+
+- **Phase 4 — The Night Watch + Home story** (commit: `phase-4-complete`)
+  - Created 24-hour Night Watch story beats dataset (`src/data/nightwatch.ts`) covering 18:00 to 06:00 across 7 key care stages.
+  - Generated vector SVG hospital building silhouette (`public/img/building.svg`) with 40 individual window rects (`win-1` through `win-40`).
+  - Generated 7 SVG vignette art illustrations in `public/img/nightwatch/` for each 24x7 role.
+  - Built `HospitalBuilding` component ([`src/components/nightwatch/HospitalBuilding.tsx`](file:///d:/healthcare/src/components/nightwatch/HospitalBuilding.tsx)) rendering lit window effects matching active hour beats.
+  - Built `NightWatchStory` component ([`src/components/nightwatch/NightWatchStory.tsx`](file:///d:/healthcare/src/components/nightwatch/NightWatchStory.tsx)) with interactive hour tabs, auto-play toggle (WCAG 2.2.2 compliant), "Skip story" link, and a static ordered list (`<ol>`) fallback for Calm Mode / reduced motion / screen readers.
+  - Integrated `NightWatchStory` into `HomePage` (Home story) and `AboutPage` (`/about`).
+  - Added unit test suite `tests/unit/phase4.test.tsx` verifying beat data, building SVG window highlights, and static fallback rendering.
 
 ## Next phase
-**Phase 4 — The Night Watch + Home story**
+**Phase 5 — The Path + Waiting Room Live**
 *Scope (from File 08):*
-SVG building, GSAP story, static fallback, mobile tier. Exit criteria: Night Watch scroll story interactive, lit windows working, static fallback for reduced motion/mobile.
+Five journeys, drawer details, printable checklist; board simulator + TV layout.
 
 ## Decisions & assumptions
-- Any red flag checked immediately routes to Emergency care level, skipping remaining questions.
-- PDF Visit Prep Sheet generator uses client-side `jspdf` for zero backend dependency.
-- All 7 rules are transparently inspectable via the "How this works" drawer modal.
+- Auto-play cycle is strictly paused when Calm Mode or `prefers-reduced-motion` is enabled, presenting an ordered list fallback.
+- Night Watch building silhouette contains 40 window rects dynamically mapped to hospital departments.
 
 ## Open questions / [VERIFY] items
 - None.
 
 ## Known issues
-- None. All quality checks (typecheck, lint, vitest 9/9, check:i18n, check:denylist, build) green.
+- None. All quality checks (typecheck, lint, vitest 12/12, check:i18n, check:denylist, build) green.

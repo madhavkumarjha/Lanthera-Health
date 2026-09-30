@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
+import { NightWatchStory } from '../components/nightwatch/NightWatchStory';
 import { useLocale } from '../hooks/useLocale';
 
 export default function HomePage() {
@@ -291,6 +292,9 @@ export default function HomePage() {
           })}
         </div>
       </section>
+
+      {/* The Night Watch 24×7 Story Section */}
+      <NightWatchStory />
 
       {/* Emergency Assurance Banner */}
       <section className="bg-[var(--surface)] border-t border-[var(--line)] py-12 px-4 sm:px-6 lg:px-8">

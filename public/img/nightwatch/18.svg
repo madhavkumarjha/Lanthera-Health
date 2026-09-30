@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="100%" height="100%">
+    <defs>
+      <radialGradient id="vigGlow_18" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#F0B24A" stop-opacity="0.3" />
+        <stop offset="100%" stop-color="#211826" stop-opacity="0.9" />
+      </radialGradient>
+    </defs>
+    <rect width="400" height="250" rx="12" fill="#211826" stroke="#3A2C42" stroke-width="1.5" />
+    <rect width="400" height="250" rx="12" fill="url(#vigGlow_18)" />
+    <circle cx="200" cy="110" r="50" fill="#F0B24A" opacity="0.15" />
+    
+    <!-- Hour Stamp Badge -->
+    <rect x="20" y="20" width="70" height="28" rx="6" fill="#F0B24A" />
+    <text x="55" y="38" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="14" font-weight="bold" fill="#2A1B05">18:00</text>
+    
+    <!-- Vignette Icon Illustration -->
+    <path d="M 200 80 C 180 100 180 130 200 145 C 220 130 220 100 200 80 Z" fill="#F0B24A" />
+    <circle cx="200" cy="112" r="12" fill="#FFFBF5" />
+
+    <!-- Role Title Text -->
+    <text x="200" y="200" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="16" font-weight="600" fill="#F4ECE1">Shift Handover & Triage</text>
+  </svg>
