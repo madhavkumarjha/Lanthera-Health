@@ -1,23 +1,12 @@
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
-import { AlertTriangle } from 'lucide-react';
+
 
 export function Footer() {
   const { t } = useTranslation();
 
   return (
     <footer role="contentinfo" className="bg-[var(--surface)] border-t border-[var(--line)] text-sm">
-      {/* Emergency Notice Footer Block per File 01 §5.3 */}
-      <div className="bg-[var(--surface-2)] border-b border-[var(--line)] py-4 px-4 text-center text-xs text-[var(--emergency)] flex items-center justify-center gap-2">
-        <AlertTriangle className="w-4 h-4 shrink-0" />
-        <p className="max-w-3xl">
-          {t(
-            'emergencyDisclaimer',
-            'If you think this is an emergency, call your local emergency number now. This website cannot assess emergencies.'
-          )}
-        </p>
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Brand & Purpose */}
         <div className="flex flex-col gap-4">

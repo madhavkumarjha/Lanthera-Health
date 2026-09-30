@@ -28,6 +28,6 @@ describe('Phase 2 Brand & Home Hero Components', () => {
     // Check key route tiles presence
     expect(screen.getByText(/Lantern Guide/i)).toBeInTheDocument();
     expect(screen.getAllByText(/The Path/i)[0]).toBeInTheDocument();
-    expect(screen.getByText(/Clear Ledger/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Clear Ledger/i)[0]).toBeInTheDocument();
   });
 });

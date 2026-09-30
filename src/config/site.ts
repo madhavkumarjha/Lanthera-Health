@@ -12,7 +12,7 @@ export const siteConfig: SiteConfig = {
   emergencyNumber: '+00 000 000 000',
   locales: ['en', 'hi'],
   currency: 'USD',
-  demoBanner: true,
+  demoBanner: false,
   indexable: false,
 };
 

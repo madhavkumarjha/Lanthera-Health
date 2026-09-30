@@ -14,9 +14,7 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleTheme = () => {
-    if (theme === 'dark') setTheme('light');
-    else if (theme === 'light') setTheme('auto');
-    else setTheme('dark');
+    setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
   const cycleTextSize = () => {
