@@ -1,7 +1,7 @@
 # PROGRESS.md — Project Memory & Tracking
 
 ## Current phase
-Phase 5 — The Path + Waiting Room Live (Complete)
+Phase 6 — Departments, Doctors & Circle of Care (Complete)
 
 ## Completed phases
 - **Phase 0 — SETUP ONLY** (commit: `517c33f`)
@@ -48,7 +48,7 @@ Phase 5 — The Path + Waiting Room Live (Complete)
   - Integrated `NightWatchStory` into `HomePage` (Home story) and `AboutPage` (`/about`).
   - Added unit test suite `tests/unit/phase4.test.tsx`.
 
-- **Phase 5 — The Path + Waiting Room Live** (commit: `phase-5-complete`)
+- **Phase 5 — The Path + Waiting Room Live** (commit: `7c9fcd5`)
   - Created 5 comprehensive patient journey tracks in [`src/data/path.ts`](file:///d:/healthcare/src/data/path.ts) (`emergency`, `surgery`, `daycare`, `maternity`, `outpatient`).
   - Built interactive `PathPage` ([`src/routes/PathPage.tsx`](file:///d:/healthcare/src/routes/PathPage.tsx)) featuring track selectors, vertical Wick-line timeline, active stop position tracker ("Where are you now?"), indicative duration ranges, team role badges, family advice, stop detail modal drawer, and printable checklist generator.
   - Created Waiting Room Live dataset in [`src/data/board.ts`](file:///d:/healthcare/src/data/board.ts) with anonymised tokens (`L-204` to `L-209`) and 4 stage definitions (`prep`, `procedure`, `recovery`, `ready`).
@@ -56,17 +56,26 @@ Phase 5 — The Path + Waiting Room Live (Complete)
   - Built `FamiliesPage` ([`src/routes/FamiliesPage.tsx`](file:///d:/healthcare/src/routes/FamiliesPage.tsx)) family care hub connecting to Waiting Room Live.
   - Added unit test suite [`tests/unit/phase5.test.tsx`](file:///d:/healthcare/tests/unit/phase5.test.tsx).
 
+- **Phase 6 — Departments, Doctors & Circle of Care** (commit: `phase-6-complete`)
+  - Created 12 medical departments in [`src/data/departments.ts`](file:///d:/healthcare/src/data/departments.ts) with bilingual copy, conditions treated, diagnostic tests, and department head links.
+  - Created fictional staff & leadership directory in [`src/data/people.ts`](file:///d:/healthcare/src/data/people.ts) with mandatory demo registration IDs and bios.
+  - Built `/departments` listing with audience filters (`All`, `Adult`, `Child`, `Women`, `Senior`) and `/departments/:slug` detail page with department head cards and FAQ accordion.
+  - Built `/doctors` directory with department, language, and consultation mode filters and `/doctors/:slug` detail view featuring glowing halo ring portraits.
+  - Built `/team` Circle of Care hub supporting both interactive Constellation orbital halo rings and an Accessible Tree List view.
+  - Built `/book` appointment booking wizard with department/doctor prefilling and demo confirmation modal.
+  - Added unit test suite [`tests/unit/phase6.test.tsx`](file:///d:/healthcare/tests/unit/phase6.test.tsx).
+
 ## Next phase
-**Phase 6 — Departments, Doctors & Circle of Care**
+**Phase 7 — Clear Ledger, Health Packages & International**
 *Scope (from File 08):*
-Data, listing/detail pages, filters, constellation + accessible tree view, doctor profiles, booking mock.
+Financial transparency ledger (`/ledger`), health check packages (`/packages`), international care desk (`/international`), and diagnostic directory (`/diagnostics`).
 
 ## Decisions & assumptions
-- Waiting Room Live status board strictly uses anonymised token numbers only to preserve patient privacy.
-- The Path journey duration ranges carry mandatory compliance disclaimer that clinical care timing varies by patient needs.
+- Fictional disclaimers are placed on all doctor profile cards and booking interactions per compliance guidelines.
+- Department head connections are explicitly linked between `departments.ts` and `people.ts`.
 
 ## Open questions / [VERIFY] items
 - None.
 
 ## Known issues
-- None. All quality checks (typecheck, lint, vitest 17/17, check:i18n, check:denylist, build) green.
+- None. All quality checks (typecheck, lint, vitest 23/23, check:i18n, check:denylist, build) green.
