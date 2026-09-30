@@ -1,8 +1,264 @@
+import { useState } from 'react';
+import { useSearchParams } from 'react-router';
+import { journeyPaths } from '../data/path';
+import { PathStop } from '../types';
+import { useLocale } from '../hooks/useLocale';
+import { Button } from '../components/ui/Button';
+import { Card } from '../components/ui/Card';
+import { Modal } from '../components/ui/Modal';
+import {
+  MapPin,
+  Clock,
+  Printer,
+  ChevronRight,
+  CheckCircle2,
+  Users,
+  Briefcase,
+  HelpCircle,
+  AlertCircle,
+  BookmarkCheck,
+} from 'lucide-react';
+
 export default function PathPage() {
+  const { locale } = useLocale();
+  const isHi = locale === 'hi';
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // Active Journey state
+  const selectedJourneyId = searchParams.get('journey') || 'emergency';
+  const defaultJourney = journeyPaths[0] || {
+    id: 'emergency',
+    title: { en: 'Emergency Journey', hi: 'इमरजेंसी मार्ग' },
+    stops: [],
+  };
+  const activeJourney = journeyPaths.find((j) => j.id === selectedJourneyId) ?? defaultJourney;
+
+  // Tracker state: current active stop index
+  const [activeStopIndex, setActiveStopIndex] = useState(0);
+
+  // Selected Stop Drawer Modal
+  const [detailStop, setDetailStop] = useState<PathStop | null>(null);
+
+  const handleSelectJourney = (id: string) => {
+    setSearchParams({ journey: id });
+    setActiveStopIndex(0);
+  };
+
   return (
-    <div className="p-8 max-w-4xl mx-auto">
-      <h1 className="text-3xl font-bold mb-2">The Path</h1>
-      <p className="text-muted-foreground">Route: /path</p>
+    <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto flex flex-col gap-8">
+      {/* Disclaimer Banner per File 01 & 04 */}
+      <div className="p-4 rounded-[var(--radius-md)] bg-[var(--surface-2)] border border-[var(--line)] flex items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <AlertCircle className="w-5 h-5 text-[var(--accent)] shrink-0" />
+          <p className="text-xs text-[var(--text-muted)]">
+            <strong className="text-[var(--text)]">Indicative Durations:</strong> Timings are general estimates. Clinical care priorities always come first.
+          </p>
+        </div>
+        <Button variant="secondary" size="sm" onClick={() => window.print()} className="shrink-0">
+          <Printer className="w-4 h-4 mr-1.5" />
+          {isHi ? 'चेकलिस्ट प्रिंट करें' : 'Print Checklist'}
+        </Button>
+      </div>
+
+      {/* Page Header */}
+      <div className="border-b border-[var(--line)] pb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--surface-2)] text-xs font-mono text-[var(--accent)] uppercase tracking-wider mb-2">
+          <MapPin className="w-3.5 h-3.5" />
+          {isHi ? 'द पाथ (मरीज व परिवार यात्रा)' : 'The Path (Patient & Family Journeys)'}
+        </div>
+        <h1 className="font-display text-3xl sm:text-4xl font-bold text-[var(--text)]">
+          {isHi ? 'जानिए आपके आगमन पर आगे क्या होगा' : 'What happens next — Step by Step'}
+        </h1>
+        <p className="text-base text-[var(--text-muted)] mt-1">
+          {isHi
+            ? 'आगमन से लेकर रिकवरी और डिस्चार्ज तक 5 विस्तृत मार्गदर्शक चरण।'
+            : 'Select a care journey below to view indicative timing, care team roles, and what family can do.'}
+        </p>
+      </div>
+
+      {/* 5 Journey Track Selectors */}
+      <div className="flex flex-wrap gap-2">
+        {journeyPaths.map((jp) => (
+          <button
+            key={jp.id}
+            type="button"
+            onClick={() => handleSelectJourney(jp.id)}
+            className={`px-4 py-2.5 rounded-[var(--radius-md)] text-sm font-medium transition-all ${
+              activeJourney.id === jp.id
+                ? 'bg-[var(--accent)] text-[var(--accent-ink)] font-bold shadow-md'
+                : 'bg-[var(--surface-2)] text-[var(--text-muted)] hover:text-[var(--text)]'
+            }`}
+          >
+            {isHi ? jp.title.hi : jp.title.en}
+          </button>
+        ))}
+      </div>
+
+      {/* Active Journey Card & Tracker */}
+      <Card shape="lantern" className="p-6 sm:p-8 flex flex-col gap-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[var(--line)] pb-4">
+          <div>
+            <h2 className="font-display text-2xl font-bold text-[var(--text)]">
+              {isHi ? activeJourney.title.hi : activeJourney.title.en}
+            </h2>
+            <p className="text-xs font-mono text-[var(--accent)] mt-1">
+              {activeJourney.stops.length} Guided Steps • Active Tracker Enabled
+            </p>
+          </div>
+
+          {/* Current Stop Position Control */}
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-[var(--text-muted)] font-mono">
+              {isHi ? 'आप इस समय कहाँ हैं?' : 'Where are you now?'}
+            </span>
+            <select
+              value={activeStopIndex}
+              onChange={(e) => setActiveStopIndex(Number(e.target.value))}
+              className="px-3 py-1.5 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-xs text-[var(--text)] focus:outline-none focus:border-[var(--accent)]"
+            >
+              {activeJourney.stops.map((stop, idx) => (
+                <option key={stop.id} value={idx}>
+                  Step {idx + 1}: {isHi ? stop.title.hi : stop.title.en}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        {/* Vertical Wick-Line Timeline */}
+        <div className="relative pl-6 sm:pl-8 border-l-2 border-[var(--accent)]/40 flex flex-col gap-8 my-2">
+          {activeJourney.stops.map((stop, idx) => {
+            const isCurrent = idx === activeStopIndex;
+            const isPassed = idx < activeStopIndex;
+
+            return (
+              <div key={stop.id} className="relative group">
+                {/* Timeline Node Badge */}
+                <div
+                  className={`absolute -left-[31px] sm:-left-[39px] top-0 w-8 h-8 rounded-full border-2 flex items-center justify-center font-mono text-xs font-bold transition-all ${
+                    isCurrent
+                      ? 'bg-[var(--accent)] border-white text-[var(--accent-ink)] scale-110 shadow-[0_0_12px_var(--accent)]'
+                      : isPassed
+                      ? 'bg-[var(--sage)] border-[var(--sage)] text-white'
+                      : 'bg-[var(--surface-2)] border-[var(--line)] text-[var(--text-muted)]'
+                  }`}
+                >
+                  {isPassed ? <CheckCircle2 className="w-4 h-4" /> : idx + 1}
+                </div>
+
+                {/* Stop Card */}
+                <Card
+                  className={`p-5 flex flex-col gap-3 transition-all ${
+                    isCurrent
+                      ? 'border-[var(--accent)] bg-[var(--accent)]/10 shadow-[var(--elevation-shadow)]'
+                      : 'hover:border-[var(--line)]/80'
+                  }`}
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <h3 className="font-display font-bold text-lg text-[var(--text)]">
+                      {isHi ? stop.title.hi : stop.title.en}
+                    </h3>
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[var(--surface-2)] font-mono text-xs text-[var(--accent)] self-start sm:self-auto">
+                      <Clock className="w-3.5 h-3.5" />
+                      <span>
+                        {stop.durationRange.minMin}–{stop.durationRange.maxMin} mins
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Roles Involved */}
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="text-xs text-[var(--text-muted)] font-mono flex items-center gap-1">
+                      <Users className="w-3.5 h-3.5" />
+                      {isHi ? 'उपस्थित टीम:' : "Who you'll meet:"}
+                    </span>
+                    {stop.who.map((role) => (
+                      <span
+                        key={role}
+                        className="px-2 py-0.5 rounded bg-[var(--surface-2)] text-[11px] font-medium text-[var(--text)]"
+                      >
+                        {role}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Family Can Do List */}
+                  <div className="text-xs text-[var(--text-muted)] flex flex-col gap-1 mt-1">
+                    <span className="font-semibold text-[var(--text)]">
+                      {isHi ? 'परिजन क्या कर सकते हैं:' : 'What family can do:'}
+                    </span>
+                    <ul className="list-disc pl-4 space-y-0.5">
+                      {stop.familyCan.map((fc) => (
+                        <li key={fc.en}>{isHi ? fc.hi : fc.en}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Detail Action */}
+                  <div className="pt-2 flex justify-between items-center border-t border-[var(--line)]/50 mt-2">
+                    <button
+                      type="button"
+                      onClick={() => setDetailStop(stop)}
+                      className="text-xs font-semibold text-[var(--accent)] hover:underline flex items-center gap-1"
+                    >
+                      {isHi ? 'विस्तृत विवरण व चेकलिस्ट देखें' : 'View full stop details & bring list'}
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </Card>
+              </div>
+            );
+          })}
+        </div>
+      </Card>
+
+      {/* Stop Detail Modal / Drawer */}
+      {detailStop && (
+        <Modal
+          isOpen={!!detailStop}
+          onClose={() => setDetailStop(null)}
+          title={isHi ? detailStop.title.hi : detailStop.title.en}
+        >
+          <div className="flex flex-col gap-6 text-sm">
+            <div className="flex justify-between items-center bg-[var(--surface-2)] p-3 rounded-[var(--radius-sm)]">
+              <span className="font-mono text-xs text-[var(--accent)] font-bold">
+                Indicative Duration: {detailStop.durationRange.minMin}–{detailStop.durationRange.maxMin} mins
+              </span>
+            </div>
+
+            {/* What to Bring */}
+            <div className="flex flex-col gap-2">
+              <h4 className="font-display font-semibold text-base text-[var(--text)] flex items-center gap-2">
+                <Briefcase className="w-4 h-4 text-[var(--accent)]" />
+                {isHi ? 'इस चरण पर क्या साथ लाएं:' : 'What to bring for this step:'}
+              </h4>
+              <ul className="list-disc pl-5 text-xs text-[var(--text-muted)] space-y-1">
+                {detailStop.bring.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Questions to Ask */}
+            <div className="flex flex-col gap-2">
+              <h4 className="font-display font-semibold text-base text-[var(--text)] flex items-center gap-2">
+                <HelpCircle className="w-4 h-4 text-[var(--accent)]" />
+                {isHi ? 'डॉक्टर/नर्स से पूछने हेतु सवाल:' : 'Questions to ask care team:'}
+              </h4>
+              <ul className="list-disc pl-5 text-xs text-[var(--text-muted)] space-y-1">
+                {detailStop.ask.map((a) => (
+                  <li key={a.en}>{isHi ? a.hi : a.en}</li>
+                ))}
+              </ul>
+            </div>
+
+            <Button variant="primary" size="md" onClick={() => setDetailStop(null)} className="w-full">
+              <BookmarkCheck className="w-4 h-4 mr-2" />
+              {isHi ? 'बंद करें' : 'Done & Close'}
+            </Button>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 }

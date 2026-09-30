@@ -1,7 +1,7 @@
 # PROGRESS.md — Project Memory & Tracking
 
 ## Current phase
-Phase 4 — The Night Watch + Home story (Complete)
+Phase 5 — The Path + Waiting Room Live (Complete)
 
 ## Completed phases
 - **Phase 0 — SETUP ONLY** (commit: `517c33f`)
@@ -39,26 +39,34 @@ Phase 4 — The Night Watch + Home story (Complete)
   - Built full interactive stepped `GuidePage` (`/guide`) featuring mandatory disclaimer banner, 4-step questionnaire, result view with care level card, interactive "What to bring" packing checklist, "Questions to ask doctor" list, arrival steps roadmap, PDF download, summary copy, print, and transparent rule table modal drawer.
   - Added unit test suite `tests/unit/phase3.test.tsx`.
 
-- **Phase 4 — The Night Watch + Home story** (commit: `phase-4-complete`)
+- **Phase 4 — The Night Watch + Home story** (commit: `be61de5`)
   - Created 24-hour Night Watch story beats dataset (`src/data/nightwatch.ts`) covering 18:00 to 06:00 across 7 key care stages.
   - Generated vector SVG hospital building silhouette (`public/img/building.svg`) with 40 individual window rects (`win-1` through `win-40`).
-  - Generated 7 SVG vignette art illustrations in `public/img/nightwatch/` for each 24x7 role.
+  - Generated 7 SVG vignette art illustrations in `public/img/nightwatch/`.
   - Built `HospitalBuilding` component ([`src/components/nightwatch/HospitalBuilding.tsx`](file:///d:/healthcare/src/components/nightwatch/HospitalBuilding.tsx)) rendering lit window effects matching active hour beats.
-  - Built `NightWatchStory` component ([`src/components/nightwatch/NightWatchStory.tsx`](file:///d:/healthcare/src/components/nightwatch/NightWatchStory.tsx)) with interactive hour tabs, auto-play toggle (WCAG 2.2.2 compliant), "Skip story" link, and a static ordered list (`<ol>`) fallback for Calm Mode / reduced motion / screen readers.
+  - Built `NightWatchStory` component ([`src/components/nightwatch/NightWatchStory.tsx`](file:///d:/healthcare/src/components/nightwatch/NightWatchStory.tsx)) with interactive hour tabs, auto-play toggle, "Skip story" link, and a static ordered list (`<ol>`) fallback for Calm Mode / reduced motion.
   - Integrated `NightWatchStory` into `HomePage` (Home story) and `AboutPage` (`/about`).
-  - Added unit test suite `tests/unit/phase4.test.tsx` verifying beat data, building SVG window highlights, and static fallback rendering.
+  - Added unit test suite `tests/unit/phase4.test.tsx`.
+
+- **Phase 5 — The Path + Waiting Room Live** (commit: `phase-5-complete`)
+  - Created 5 comprehensive patient journey tracks in [`src/data/path.ts`](file:///d:/healthcare/src/data/path.ts) (`emergency`, `surgery`, `daycare`, `maternity`, `outpatient`).
+  - Built interactive `PathPage` ([`src/routes/PathPage.tsx`](file:///d:/healthcare/src/routes/PathPage.tsx)) featuring track selectors, vertical Wick-line timeline, active stop position tracker ("Where are you now?"), indicative duration ranges, team role badges, family advice, stop detail modal drawer, and printable checklist generator.
+  - Created Waiting Room Live dataset in [`src/data/board.ts`](file:///d:/healthcare/src/data/board.ts) with anonymised tokens (`L-204` to `L-209`) and 4 stage definitions (`prep`, `procedure`, `recovery`, `ready`).
+  - Built `BoardPage` ([`src/routes/BoardPage.tsx`](file:///d:/healthcare/src/routes/BoardPage.tsx)) featuring real-time simulator, token search filter, stage legend, TV / large-screen monitor mode, and mandatory privacy disclaimer.
+  - Built `FamiliesPage` ([`src/routes/FamiliesPage.tsx`](file:///d:/healthcare/src/routes/FamiliesPage.tsx)) family care hub connecting to Waiting Room Live.
+  - Added unit test suite [`tests/unit/phase5.test.tsx`](file:///d:/healthcare/tests/unit/phase5.test.tsx).
 
 ## Next phase
-**Phase 5 — The Path + Waiting Room Live**
+**Phase 6 — Departments, Doctors & Circle of Care**
 *Scope (from File 08):*
-Five journeys, drawer details, printable checklist; board simulator + TV layout.
+Data, listing/detail pages, filters, constellation + accessible tree view, doctor profiles, booking mock.
 
 ## Decisions & assumptions
-- Auto-play cycle is strictly paused when Calm Mode or `prefers-reduced-motion` is enabled, presenting an ordered list fallback.
-- Night Watch building silhouette contains 40 window rects dynamically mapped to hospital departments.
+- Waiting Room Live status board strictly uses anonymised token numbers only to preserve patient privacy.
+- The Path journey duration ranges carry mandatory compliance disclaimer that clinical care timing varies by patient needs.
 
 ## Open questions / [VERIFY] items
 - None.
 
 ## Known issues
-- None. All quality checks (typecheck, lint, vitest 12/12, check:i18n, check:denylist, build) green.
+- None. All quality checks (typecheck, lint, vitest 17/17, check:i18n, check:denylist, build) green.
