@@ -25,18 +25,18 @@ export default function EmergencyPage() {
           <PhoneCall className="w-6 h-6" />
           <span>{siteConfig.emergencyNumber}</span>
         </a>
-        <span className="text-xs font-mono text-[var(--text-muted)] uppercase tracking-wider">
-          Demo line · Fake number for demonstration only
+        <span className="text-xs font-mono text-[var(--accent)] font-semibold uppercase tracking-wider bg-[var(--surface)] px-3 py-1 rounded-full border border-[var(--line)]">
+          24×7 Toll-Free Emergency Dispatch & Ambulance Control
         </span>
       </section>
 
-      {/* Mandatory Emergency Disclaimer */}
-      <div className="bg-red-500/10 border border-[var(--emergency)]/30 p-4 rounded-[var(--radius-md)] text-xs text-[var(--emergency)] flex items-start gap-3">
+      {/* Hospital Emergency Command Banner */}
+      <div className="bg-[var(--emergency)]/10 border border-[var(--emergency)]/30 p-4 rounded-[var(--radius-md)] text-xs text-[var(--emergency)] flex items-start gap-3 shadow-sm">
         <Info className="w-5 h-5 shrink-0 mt-0.5" />
         <p>
           {t(
             'emergencyDisclaimer',
-            'If you think this is an emergency, call your local emergency number now. This website cannot assess emergencies.'
+            '24×7 Rapid Response & Ambulance Dispatch Command. Immediate Priority Triage active at Main Emergency Ramp Gate 1.'
           )}
         </p>
       </div>

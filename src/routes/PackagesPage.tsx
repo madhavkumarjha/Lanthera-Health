@@ -165,7 +165,7 @@ export default function PackagesPage() {
         <Modal
           isOpen={!!selectedPackage}
           onClose={() => setSelectedPackage(null)}
-          title={isHi ? 'स्वास्थ्य जांच बुकिंग (Demo)' : 'Book Preventive Health Check'}
+          title={isHi ? 'स्वास्थ्य जांच बुकिंग' : 'Book Preventive Health Check'}
         >
           <form onSubmit={handleConfirmBooking} className="flex flex-col gap-4 text-sm">
             {bookedSuccess ? (
@@ -175,7 +175,7 @@ export default function PackagesPage() {
                   {isHi ? 'बुकिंग की पुष्टि हो गई!' : 'Health Check Booked!'}
                 </h3>
                 <p className="text-xs text-[var(--text-muted)]">
-                  Demo booking for {isHi ? selectedPackage.name.hi : selectedPackage.name.en}. Our phlebotomist team will contact you.
+                  Appointment reserved for {isHi ? selectedPackage.name.hi : selectedPackage.name.en}. Our clinical care team will contact you.
                 </p>
               </div>
             ) : (
@@ -189,7 +189,7 @@ export default function PackagesPage() {
                   <input
                     type="text"
                     required
-                    defaultValue="Alex Demo"
+                    defaultValue="Alex Morgan"
                     className="px-3 py-2 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
                   />
                 </label>
@@ -199,7 +199,7 @@ export default function PackagesPage() {
                   <input
                     type="text"
                     required
-                    defaultValue="+91 98765 43210"
+                    defaultValue="+1 (800) 555-0199"
                     className="px-3 py-2 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
                   />
                 </label>
@@ -216,7 +216,7 @@ export default function PackagesPage() {
 
                 <Button type="submit" variant="primary" size="md" className="mt-2">
                   <ShieldCheck className="w-4 h-4 mr-2" />
-                  {isHi ? 'बुकिंग कन्फर्म करें' : 'Confirm Demo Checkup Booking'}
+                  {isHi ? 'बुकिंग कन्फर्म करें' : 'Confirm Health Checkup Booking'}
                 </Button>
               </>
             )}

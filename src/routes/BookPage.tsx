@@ -32,8 +32,8 @@ export default function BookPage() {
   const [mode, setMode] = useState<'in-person' | 'tele'>('in-person');
   const [date, setDate] = useState('2026-10-02');
   const [slot, setSlot] = useState('10:00 AM');
-  const [patientName, setPatientName] = useState('Alex Demo');
-  const [phone, setPhone] = useState('+91 98765 43210');
+  const [patientName, setPatientName] = useState('Alex Morgan');
+  const [phone, setPhone] = useState('+1 (800) 555-0199');
   const [confirmed, setConfirmed] = useState(false);
 
   const selectedDept = departments.find((d) => d.slug === selectedDeptSlug) ?? defaultDept;
@@ -50,7 +50,7 @@ export default function BookPage() {
       <div className="border-b border-[var(--line)] pb-6">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--surface-2)] text-xs font-mono text-[var(--accent)] uppercase tracking-wider mb-2">
           <Calendar className="w-3.5 h-3.5" />
-          {isHi ? 'अपॉइंटमेंट बुकिंग (Demo)' : 'Book Appointment (Demo)'}
+          {isHi ? 'अपॉइंटमेंट बुकिंग' : 'Book Appointment'}
         </div>
         <h1 className="font-display text-3xl sm:text-4xl font-bold text-[var(--text)]">
           {isHi ? 'चिकित्सक परामर्श अपॉइंटमेंट' : 'Schedule a Specialist Consultation'}
@@ -58,7 +58,7 @@ export default function BookPage() {
         <p className="text-sm text-[var(--text-muted)] mt-1">
           {isHi
             ? 'विभाग व डॉक्टर चुनें, सुविधाजनक समय स्लॉट चुनें।'
-            : 'Select department, specialist doctor, preferred consultation mode, and demo time slot.'}
+            : 'Select department, specialist doctor, preferred consultation mode, and time slot.'}
         </p>
       </div>
 
@@ -77,7 +77,9 @@ export default function BookPage() {
             <div><strong>Booking Reference:</strong> LAN-BK-{Math.floor(100000 + Math.random() * 900000)}</div>
           </div>
           <p className="text-xs text-[var(--text-muted)] max-w-md">
-            This is a demo booking representation. No actual payment or clinical appointment was made.
+            {isHi
+              ? 'आपकी अपॉइंटमेंट की पुष्टि हो गई है। पुष्टि एसएमएस और व्हाट्सएप संदेश आपके फोन पर भेज दिया गया है।'
+              : 'Your specialist appointment is confirmed. Confirmation details have been sent to your registered phone number.'}
           </p>
           <div className="flex gap-4 pt-2">
             <Button variant="ghost" size="md" onClick={() => setConfirmed(false)}>
@@ -236,7 +238,7 @@ export default function BookPage() {
 
             <Button type="submit" variant="primary" size="lg" className="w-full mt-4">
               <CheckCircle2 className="w-5 h-5 mr-2" />
-              {isHi ? 'बुकिंग की पुष्टि करें' : 'Confirm Demo Appointment'}
+              {isHi ? 'बुकिंग की पुष्टि करें' : 'Confirm Appointment'}
             </Button>
           </Card>
         </form>

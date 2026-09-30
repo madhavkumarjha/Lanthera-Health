@@ -1,5 +1,5 @@
 import { Outlet, NavLink } from 'react-router';
-import { FileText, User, ShieldCheck, Clock, Calendar } from 'lucide-react';
+import { FileText, ShieldCheck, Clock, Calendar } from 'lucide-react';
 import { useLocale } from '../hooks/useLocale';
 
 export function PortalLayout() {
@@ -7,9 +7,9 @@ export function PortalLayout() {
   const isHi = locale === 'hi';
 
   return (
-    <div className="portal-layout min-h-screen flex flex-col md:flex-row">
+    <div className="portal-layout min-h-screen flex flex-col md:flex-row bg-[var(--bg)]">
       {/* Branded Portal Navigation Sidebar */}
-      <aside className="w-full md:w-64 border-b md:border-b-0 md:border-r border-[var(--line)] bg-[var(--surface-2)] p-6 flex flex-col gap-6 shrink-0">
+      <aside className="w-full md:w-64 border-b md:border-b-0 md:border-r border-[var(--line)] bg-[var(--surface-2)] p-6 flex flex-col gap-6 shrink-0 shadow-lg">
         <div className="flex flex-col gap-1">
           <span className="text-[10px] font-mono text-[var(--accent)] uppercase font-semibold">
             LANTHERA PORTAL
@@ -24,10 +24,10 @@ export function PortalLayout() {
             to="/portal"
             end
             className={({ isActive }) =>
-              `p-3 rounded-[var(--radius-sm)] flex items-center gap-2.5 transition-colors ${
+              `p-3 rounded-[var(--radius-sm)] flex items-center gap-2.5 transition-all hover-lift ${
                 isActive
-                  ? 'bg-[var(--accent)] text-[var(--accent-ink)] font-bold shadow-sm'
-                  : 'text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]'
+                  ? 'bg-[var(--accent)] text-[var(--accent-ink)] font-bold shadow-md'
+                  : 'text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--surface)] border border-transparent hover:border-[var(--line)]'
               }`
             }
           >
@@ -36,12 +36,12 @@ export function PortalLayout() {
           </NavLink>
 
           <NavLink
-            to="/book"
+            to="/portal?tab=book"
             className={({ isActive }) =>
-              `p-3 rounded-[var(--radius-sm)] flex items-center gap-2.5 transition-colors ${
+              `p-3 rounded-[var(--radius-sm)] flex items-center gap-2.5 transition-all hover-lift ${
                 isActive
-                  ? 'bg-[var(--accent)] text-[var(--accent-ink)] font-bold shadow-sm'
-                  : 'text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]'
+                  ? 'bg-[var(--accent)] text-[var(--accent-ink)] font-bold shadow-md'
+                  : 'text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--surface)] border border-transparent hover:border-[var(--line)]'
               }`
             }
           >
@@ -50,12 +50,12 @@ export function PortalLayout() {
           </NavLink>
 
           <NavLink
-            to="/guide"
+            to="/portal?tab=prep"
             className={({ isActive }) =>
-              `p-3 rounded-[var(--radius-sm)] flex items-center gap-2.5 transition-colors ${
+              `p-3 rounded-[var(--radius-sm)] flex items-center gap-2.5 transition-all hover-lift ${
                 isActive
-                  ? 'bg-[var(--accent)] text-[var(--accent-ink)] font-bold shadow-sm'
-                  : 'text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]'
+                  ? 'bg-[var(--accent)] text-[var(--accent-ink)] font-bold shadow-md'
+                  : 'text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--surface)] border border-transparent hover:border-[var(--line)]'
               }`
             }
           >
@@ -64,12 +64,12 @@ export function PortalLayout() {
           </NavLink>
 
           <NavLink
-            to="/ledger"
+            to="/portal?tab=ledger"
             className={({ isActive }) =>
-              `p-3 rounded-[var(--radius-sm)] flex items-center gap-2.5 transition-colors ${
+              `p-3 rounded-[var(--radius-sm)] flex items-center gap-2.5 transition-all hover-lift ${
                 isActive
-                  ? 'bg-[var(--accent)] text-[var(--accent-ink)] font-bold shadow-sm'
-                  : 'text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--surface)]'
+                  ? 'bg-[var(--accent)] text-[var(--accent-ink)] font-bold shadow-md'
+                  : 'text-[var(--text-muted)] hover:text-[var(--text)] hover:bg-[var(--surface)] border border-transparent hover:border-[var(--line)]'
               }`
             }
           >
@@ -78,12 +78,14 @@ export function PortalLayout() {
           </NavLink>
         </nav>
 
-        {/* Demo Patient Info Badge */}
-        <div className="mt-auto p-3 rounded-[var(--radius-sm)] bg-[var(--surface)] border border-[var(--line)] flex items-center gap-2 text-xs">
-          <User className="w-4 h-4 text-[var(--accent)] shrink-0" />
+        {/* Patient Profile Badge */}
+        <div className="mt-auto p-3 rounded-[var(--radius-sm)] bg-[var(--surface)] border border-[var(--line)] flex items-center gap-2.5 text-xs shadow-sm">
+          <div className="w-8 h-8 rounded-full bg-[var(--accent)]/15 border border-[var(--accent)]/30 flex items-center justify-center text-[var(--accent)] shrink-0 font-bold">
+            AM
+          </div>
           <div className="overflow-hidden">
-            <div className="font-bold text-[var(--text)] truncate">Alex Demo</div>
-            <div className="text-[10px] text-[var(--text-muted)] font-mono">ID: #LAN-8910</div>
+            <div className="font-bold text-[var(--text)] truncate">Alex Morgan</div>
+            <div className="text-[10px] text-[var(--sage)] font-mono">Patient #LAN-8910</div>
           </div>
         </div>
       </aside>

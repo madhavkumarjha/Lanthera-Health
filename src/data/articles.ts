@@ -144,4 +144,109 @@ Pneumoperitoneum & Diaphragmatic Reflex: Intrabdominal pressure is maintained at
     reviewedBy: 'Dr. Siddharth Menon (Reg: MH-MC-99412)',
     reviewedOn: '2026-09-01',
   },
+  {
+    slug: 'stroke-warning-signs-fast-protocol',
+    dept: 'neurology',
+    title: {
+      en: 'Recognizing Stroke Symptoms: The BE-FAST Protocol & Emergency Triage',
+      hi: 'स्ट्रोक के लक्षणों की पहचान: BE-FAST प्रोटोकॉल और त्वरित उपचार',
+    },
+    summary: {
+      en: 'Every minute matters during a stroke. Learn the BE-FAST signs (Balance, Eyes, Face, Arm, Speech, Time) and emergency steps.',
+      hi: 'स्ट्रोक के दौरान हर मिनट कीमती है। BE-FAST लक्षणों (संतुलन, दृष्टि, चेहरा, हाथ, बोली, समय) को जानें।',
+    },
+    layers: {
+      s30: {
+        en: 'Stroke occurs when blood flow to brain tissue is interrupted. Call emergency 24×7 immediately if you notice sudden facial droop, arm weakness, or slurred speech. Treatment within 4.5 hours saves brain function.',
+        hi: 'स्ट्रोक तब होता है जब मस्तिष्क में रक्त प्रवाह बाधित होता है। चेहरे में झुकाव, हाथ में कमजोरी या बोली लड़खड़ाने पर तुरंत आपातकालीन सहायता लें। 4.5 घंटे के भीतर उपचार मस्तिष्क क्षति को रोकता है।',
+      },
+      m3: {
+        en: `The BE-FAST Acronym for Stroke Recognition:
+• B (Balance): Sudden loss of balance or coordination.
+• E (Eyes): Sudden blurred or double vision in one or both eyes.
+• F (Face Droop): One side of the face droops when smiling.
+• A (Arm Drift): One arm drifts downward when both arms are raised.
+• S (Speech Difficulty): Slurred or strange speech when repeating a simple sentence.
+• T (Time to Act): Call emergency services immediately. Note the exact time symptoms started.`,
+        hi: `स्ट्रोक पहचान के लिए BE-FAST नियम:
+• B (संतुलन): अचानक संतुलन या समन्वय खोना।
+• E (आंखें): एक या दोनों आंखों की दृष्टि अचानक धुंधली होना।
+• F (चेहरा): मुस्कुराने पर चेहरे का एक तरफ झुकना।
+• A (हाथ): दोनों हाथ उठाने पर एक हाथ का नीचे गिरना।
+• S (बोली): बोलने में कठिनाई या शब्द लड़खड़ाना।
+• T (समय): तुरंत आपातकालीन नंबर पर कॉल करें और लक्षण शुरू होने का सटीक समय नोट करें।`,
+      },
+      deep: {
+        en: `Ischemic vs Hemorrhagic Pathophysiology & Thrombolytic Windows:
+Ischemic strokes account for 87% of events, caused by arterial thrombosis or cardioembolism. Intravenous tissue plasminogen activator (tPA / Tenecteplase) must be administered within 4.5 hours of symptom onset. Mechanical thrombectomy for large vessel occlusions (LVO) extends up to 24 hours based on CT perfusion imaging.`,
+        hi: `इस्कीमिक बनाम हेमोरेजिक विकृति विज्ञान व थ्रोम्बोलाइटिक विंडो:
+87% स्ट्रोक इस्कीमिक (रक्त प्रवाह रुकने से) होते हैं। tPA दवा लक्षण शुरू होने के 4.5 घंटे के भीतर दी जानी चाहिए। बड़े पोत अवरोध के लिए मैकेनिकल थ्रोम्बेक्टोमी 24 घंटे तक संभव है।`,
+      },
+    },
+    glossary: [
+      {
+        term: 'tPA (Tissue Plasminogen Activator)',
+        def: {
+          en: 'Clot-dissolving medication given intravenously during acute ischemic stroke.',
+          hi: 'आपातकालीन इस्कीमिक स्ट्रोक के दौरान रक्त के थक्के को घोलने वाली दवा।',
+        },
+      },
+    ],
+    askDoctor: [
+      { en: 'What was the exact door-to-needle time during triage?', hi: 'ट्राइएज के दौरान उपचार शुरू होने में कितना समय लगा?' },
+      { en: 'What blood thinners are required for secondary stroke prevention?', hi: 'पुनः स्ट्रोक से बचाव के लिए कौन सी दवाएं आवश्यक हैं?' },
+    ],
+    sources: ['American Stroke Association (ASA) Guidelines', 'Indian Stroke Association Guidelines'],
+    reviewedBy: 'Dr. Miriam Chen (Reg: MCI-2008-8832)',
+    reviewedOn: '2026-09-10',
+  },
+  {
+    slug: 'robotic-joint-replacement-recovery',
+    dept: 'orthopedics',
+    title: {
+      en: 'Robotic Total Knee & Hip Replacement: Pre-Op & Post-Op Recovery Guide',
+      hi: 'रोबोटिक जॉइंट रिप्लेसमेंट (घुटने व कूल्हे का प्रत्यारोपण): रिकवरी गाइड',
+    },
+    summary: {
+      en: 'Precision 3D pre-planning, minimal bone resection, same-day mobilization, and physical therapy milestones.',
+      hi: 'सटीक 3D मैपिंग, न्यूनतम हड्डी कटाई, पहले ही दिन से चलना और फिजियोथेरेपी टाइमलाइन।',
+    },
+    layers: {
+      s30: {
+        en: 'Robotic-assisted surgery allows custom alignment tailored to your exact joint anatomy. Most patients walk with assistance within 4–6 hours after surgery and return home in 2–3 days.',
+        hi: 'रोबोटिक सहायता प्राप्त सर्जरी आपकी शारीरिक बनावट के अनुसार सटीक अलाइनमेंट प्रदान करती है। अधिकांश मरीज सर्जरी के 4-6 घंटे बाद चलने लगते हैं।',
+      },
+      m3: {
+        en: `Key Advantages of Robotic Surgery:
+1. Sub-Millimeter Precision: 3D CT mapping ensures precise implant positioning.
+2. Soft Tissue Preservation: Surrounding ligaments remain unharmed.
+3. Early Mobilization: Stand and walk with a walker on the evening of surgery.`,
+        hi: `रोबोटिक सर्जरी के प्रमुख लाभ:
+1. अत्यधिक सटीकता: 3D सीटी मैपिंग इम्प्लांट की सटीक स्थिति सुनिश्चित करती है।
+2. लिगामेंट सुरक्षा: आसपास के ऊतकों को नुकसान नहीं पहुंचता।
+3. शीघ्र चालन: सर्जरी की शाम को ही वॉकर के साथ चलना शुरू करें।`,
+      },
+      deep: {
+        en: `Haptic Guidance & Kinetic Alignment Protocols:
+Robotic haptic boundaries prevent bone resection beyond predefined 3D CT parameters. Kinetic alignment preserves natural leg mechanical axis, reducing post-operative pain scores by 40% compared to conventional manual instrumentation.`,
+        hi: `हेप्टिक गाइडेंस एवं काइनेटिक अलाइनमेंट प्रोटोकॉल:
+रोबोटिक तकनीक 3D मानकों से बाहर हड्डी को कटने से रोकती है। इससे सर्जरी के बाद दर्द कम होता है और घुटना स्वाभाविक रूप से मुड़ता है।`,
+      },
+    },
+    glossary: [
+      {
+        term: 'Haptic Boundary',
+        def: {
+          en: 'Virtual safety zone maintained by robotic surgical arm to protect soft tissues.',
+          hi: 'रोबोटिक आर्म द्वारा बनाई गई सुरक्षा सीमा जो मांसपेशियों की रक्षा करती है।',
+        },
+      },
+    ],
+    askDoctor: [
+      { en: 'How long will I require a walker before transitioning to unassisted walking?', hi: 'स्वतंत्र रूप से चलने से पहले मुझे कितने दिन वॉकर की आवश्यकता होगी?' },
+    ],
+    sources: ['American Academy of Orthopaedic Surgeons (AAOS)', 'Indian Orthopaedic Association'],
+    reviewedBy: 'Dr. Marcus Vance (Reg: MCI-2006-5544)',
+    reviewedOn: '2026-09-12',
+  },
 ];

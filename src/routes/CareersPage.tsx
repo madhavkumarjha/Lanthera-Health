@@ -138,7 +138,7 @@ export default function CareersPage() {
         <Modal
           isOpen={!!selectedRole}
           onClose={() => setSelectedRole(null)}
-          title={isHi ? 'आवेदन पत्र (Demo)' : 'Apply for Career Role'}
+          title={isHi ? 'आवेदन पत्र' : 'Apply for Career Role'}
         >
           <form onSubmit={handleApply} className="flex flex-col gap-4 text-sm">
             {submitted ? (
@@ -163,7 +163,7 @@ export default function CareersPage() {
                   <input
                     type="text"
                     required
-                    defaultValue="Alex Demo"
+                    defaultValue="Alex Morgan"
                     className="px-3 py-2 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
                   />
                 </label>
@@ -173,7 +173,7 @@ export default function CareersPage() {
                   <input
                     type="email"
                     required
-                    defaultValue="alex.demo@example.com"
+                    defaultValue="alex.morgan@lanthera.org"
                     className="px-3 py-2 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
                   />
                 </label>
@@ -183,14 +183,14 @@ export default function CareersPage() {
                   <input
                     type="text"
                     required
-                    defaultValue="+91 98765 43210"
+                    defaultValue="+1 (800) 555-0199"
                     className="px-3 py-2 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
                   />
                 </label>
 
                 <Button type="submit" variant="primary" size="md" className="mt-2">
                   <ShieldCheck className="w-4 h-4 mr-2" />
-                  {isHi ? 'आवेदन भेजें' : 'Submit Demo Application'}
+                  {isHi ? 'आवेदन भेजें' : 'Submit Application'}
                 </Button>
               </>
             )}

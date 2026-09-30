@@ -62,6 +62,8 @@ export default function UnderstandPage() {
         {[
           { id: 'all', label: isHi ? 'सभी लेख' : 'All Articles' },
           { id: 'cardiology', label: isHi ? 'हृदय रोग (Cardiology)' : 'Cardiology' },
+          { id: 'neurology', label: isHi ? 'न्यूरोलॉजी (Neurology)' : 'Neurology' },
+          { id: 'orthopedics', label: isHi ? 'ऑर्थोपेडिक्स (Orthopedics)' : 'Orthopedics' },
           { id: 'general-surgery', label: isHi ? 'शल्य चिकित्सा (Surgery)' : 'General Surgery' },
         ].map((dept) => (
           <button

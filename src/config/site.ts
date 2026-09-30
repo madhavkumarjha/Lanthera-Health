@@ -9,7 +9,7 @@ export const siteConfig: SiteConfig = {
   leadPersonId: 'dr-mira-alden',
   city: 'Demo City',
   country: 'International',
-  emergencyNumber: '+00 000 000 000',
+  emergencyNumber: '+1 (800) 526-8437',
   locales: ['en', 'hi'],
   currency: 'USD',
   demoBanner: false,

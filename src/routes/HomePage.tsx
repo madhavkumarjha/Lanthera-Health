@@ -6,7 +6,6 @@ import {
   Clock,
   ShieldCheck,
   ArrowRight,
-  Sparkles,
   Layers,
   Users,
   FileText,
@@ -25,6 +24,7 @@ import {
 import { Button } from '../components/ui/Button';
 import { Card } from '../components/ui/Card';
 import { NightWatchStory } from '../components/nightwatch/NightWatchStory';
+import { HeroVisualCard } from '../components/home/HeroVisualCard';
 import { useLocale } from '../hooks/useLocale';
 import { departments } from '../data/departments';
 import { people } from '../data/people';
@@ -197,40 +197,7 @@ export default function HomePage() {
 
             {/* Hero Cinematic Visual Container */}
             <div className="lg:col-span-5 relative">
-              <div className="relative rounded-[var(--radius-lg)] overflow-hidden border border-[var(--line)] bg-[var(--surface-2)] shadow-[var(--elevation-shadow)] group">
-                <img
-                  src="/img/hero/hero-01.webp"
-                  alt={
-                    isHi
-                      ? 'गर्म एम्बर नाइट लाइटों से रोशन शांत अस्पताल का गलियारा।'
-                      : 'Quiet hospital corridor lit by warm amber night lights.'
-                  }
-                  className="w-full h-[380px] sm:h-[460px] object-cover transition-transform duration-700 group-hover:scale-105"
-                  onError={(e) => {
-                    e.currentTarget.src = '/img/hero/hero-01.svg';
-                  }}
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-transparent to-transparent opacity-80" />
-
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-[var(--radius-md)] bg-[var(--surface)]/90 backdrop-blur-md border border-[var(--line)]">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-[var(--accent)]/15 flex items-center justify-center text-[var(--accent)] shrink-0">
-                      <Sparkles className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h2 className="text-sm font-semibold text-[var(--text)]">
-                        {isHi ? 'लैंटर्न की रोशनी हमेशा जलती है' : 'The light stays on at Lanthera'}
-                      </h2>
-                      <p className="text-xs text-[var(--text-muted)] mt-0.5">
-                        {isHi
-                          ? 'रात के किसी भी पहर में आपको स्पष्ट जानकारी मिलेगी।'
-                          : 'Human, warm, and steady care at any hour of the night.'}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <HeroVisualCard />
             </div>
           </div>
         </div>

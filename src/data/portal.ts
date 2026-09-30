@@ -6,7 +6,7 @@ export const demoReports: Report[] = [
     title: 'Comprehensive Blood Metabolic & Kidney Panel',
     date: '2026-09-28',
     dept: 'Nephrology & General Medicine',
-    patientName: 'Alex Demo (Anonymized #LAN-8910)',
+    patientName: 'Alex Morgan (Patient ID #LAN-8910)',
     values: [
       {
         name: 'Serum Creatinine',
@@ -63,7 +63,7 @@ export const demoReports: Report[] = [
     title: 'Lipid Profile & Coronary Risk Markers',
     date: '2026-09-20',
     dept: 'Cardiology',
-    patientName: 'Alex Demo (Anonymized #LAN-8910)',
+    patientName: 'Alex Morgan (Patient ID #LAN-8910)',
     values: [
       {
         name: 'Total Cholesterol',

@@ -285,7 +285,7 @@ export default function LedgerPage() {
                 <input
                   type="text"
                   required
-                  defaultValue="Alex Demo"
+                  defaultValue="Alex Morgan"
                   className="px-3 py-2 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
                 />
               </label>

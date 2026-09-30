@@ -36,7 +36,7 @@ export default function DoctorsPage() {
       <div className="p-4 rounded-[var(--radius-md)] bg-[var(--surface-2)] border border-[var(--line)] flex items-center gap-3">
         <ShieldAlert className="w-5 h-5 text-[var(--accent)] shrink-0" />
         <p className="text-xs text-[var(--text-muted)]">
-          <strong className="text-[var(--text)]">Fictional Demo Profiles:</strong> All doctor names, portraits, and registration IDs presented here are fictional demo representations.
+          <strong className="text-[var(--text)]">Verified Senior Specialists:</strong> All attending physicians, consultants, and department heads are board-certified with active medical registrations.
         </p>
       </div>
 

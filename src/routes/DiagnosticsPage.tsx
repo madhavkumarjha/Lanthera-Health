@@ -187,7 +187,7 @@ export default function DiagnosticsPage() {
         <Modal
           isOpen={!!selectedTest}
           onClose={() => setSelectedTest(null)}
-          title={isHi ? 'नैदानिक जांच बुकिंग (Demo)' : 'Book Diagnostic Test'}
+          title={isHi ? 'नैदानिक जांच बुकिंग' : 'Book Diagnostic Test'}
         >
           <form onSubmit={handleConfirmBooking} className="flex flex-col gap-4 text-sm">
             {bookedSuccess ? (
@@ -197,7 +197,7 @@ export default function DiagnosticsPage() {
                   {isHi ? 'जांच बुकिंग कन्फर्म हो गई!' : 'Diagnostic Slot Confirmed!'}
                 </h3>
                 <p className="text-xs text-[var(--text-muted)]">
-                  Demo booking for {selectedTest.code} ({isHi ? selectedTest.name.hi : selectedTest.name.en}).
+                  Appointment reserved for {selectedTest.code} ({isHi ? selectedTest.name.hi : selectedTest.name.en}).
                 </p>
               </div>
             ) : (
@@ -211,7 +211,7 @@ export default function DiagnosticsPage() {
                   <input
                     type="text"
                     required
-                    defaultValue="Alex Demo"
+                    defaultValue="Alex Morgan"
                     className="px-3 py-2 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
                   />
                 </label>
@@ -221,7 +221,7 @@ export default function DiagnosticsPage() {
                   <input
                     type="text"
                     required
-                    defaultValue="+91 98765 43210"
+                    defaultValue="+1 (800) 555-0199"
                     className="px-3 py-2 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
                   />
                 </label>
@@ -229,7 +229,7 @@ export default function DiagnosticsPage() {
                 {selectedTest.homeSample && (
                   <label className="flex items-center gap-2 text-xs font-semibold text-[var(--sage)]">
                     <input type="checkbox" defaultChecked className="rounded border-[var(--line)]" />
-                    Opt for Home Sample Collection (+₹0 Demo Offer)
+                    Opt for Home Sample Collection (Complimentary Service)
                   </label>
                 )}
 

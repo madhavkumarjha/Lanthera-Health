@@ -22,7 +22,7 @@ export function Footer() {
             {t('notAdviceDisclaimer', 'Indicative · General information · Not medical, legal or financial advice.')}
           </p>
           <p className="text-xs font-mono text-[var(--accent)]">
-            {t('demoBanner', 'Demo website · All people, data and numbers are fictional.')}
+            24×7 Active Care • Multi-Specialty Tertiary Hospital
           </p>
         </div>
 
@@ -56,7 +56,7 @@ export function Footer() {
             For Families & Status Board
           </Link>
           <Link to="/portal" className="hover:text-[var(--accent)] transition-colors">
-            Lantern Portal Demo
+            Lantern Patient Portal
           </Link>
           <Link to="/understand" className="hover:text-[var(--accent)] transition-colors">
             Understand Knowledge Hub
@@ -76,7 +76,7 @@ export function Footer() {
             Terms of Service
           </Link>
           <Link to="/demo-disclosure" className="hover:text-[var(--accent)] transition-colors">
-            Demo Disclosure
+            Compliance & Governance
           </Link>
           <Link to="/accessibility" className="hover:text-[var(--accent)] transition-colors">
             Accessibility Statement
@@ -88,7 +88,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-[var(--line)] py-6 px-4 text-center text-xs text-[var(--text-muted)]">
-        © 2026 Lanthera Health (Fictional Demo). All rights reserved.
+        © 2026 Lanthera Health. All rights reserved. Hospital Care Charter.
       </div>
     </footer>
   );

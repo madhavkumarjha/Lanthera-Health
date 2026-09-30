@@ -148,7 +148,7 @@ export default function ContactPage() {
       <Modal
         isOpen={contactModalOpen}
         onClose={() => setContactModalOpen(false)}
-        title={isHi ? 'सामान्य पूछताछ (Demo)' : 'Send General Inquiry'}
+        title={isHi ? 'सामान्य पूछताछ' : 'Send General Inquiry'}
       >
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-sm">
           {submitted ? (
@@ -168,7 +168,7 @@ export default function ContactPage() {
                 <input
                   type="text"
                   required
-                  defaultValue="Alex Demo"
+                  defaultValue="Alex Morgan"
                   className="px-3 py-2 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
                 />
               </label>

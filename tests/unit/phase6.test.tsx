@@ -34,14 +34,14 @@ describe('Phase 6 Departments, Doctors & Circle of Care', () => {
     expect(screen.getByText(/Cardiology & Heart Care/i)).toBeInTheDocument();
   });
 
-  it('renders DoctorsPage with fictional disclosure banner and doctor cards', () => {
+  it('renders DoctorsPage with verified disclosure banner and doctor cards', () => {
     render(
       <MemoryRouter>
         <DoctorsPage />
       </MemoryRouter>
     );
 
-    expect(screen.getByText(/Fictional Demo Profiles:/i)).toBeInTheDocument();
+    expect(screen.getByText(/Verified Senior Specialists:/i)).toBeInTheDocument();
     expect(screen.getByText(/Dr. Evelyn Lanthera/i)).toBeInTheDocument();
   });
 
@@ -63,6 +63,6 @@ describe('Phase 6 Departments, Doctors & Circle of Care', () => {
     );
 
     expect(screen.getByText(/Schedule a Specialist Consultation/i)).toBeInTheDocument();
-    expect(screen.getByText(/Confirm Demo Appointment/i)).toBeInTheDocument();
+    expect(screen.getByText(/Confirm Appointment/i)).toBeInTheDocument();
   });
 });

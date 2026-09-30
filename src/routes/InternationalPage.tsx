@@ -218,7 +218,7 @@ export default function InternationalPage() {
                 <input
                   type="email"
                   required
-                  defaultValue="alex.vance@demo.co.uk"
+                  defaultValue="alex.vance@lanthera.org"
                   className="px-3 py-2 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
                 />
               </label>
