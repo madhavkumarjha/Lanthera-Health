@@ -1,7 +1,7 @@
 # PROGRESS.md — Project Memory & Tracking
 
 ## Current phase
-Phase 6 — Departments, Doctors & Circle of Care (Complete)
+Phase 7 — Clear Ledger, Health Packages & International (Complete)
 
 ## Completed phases
 - **Phase 0 — SETUP ONLY** (commit: `517c33f`)
@@ -56,7 +56,7 @@ Phase 6 — Departments, Doctors & Circle of Care (Complete)
   - Built `FamiliesPage` ([`src/routes/FamiliesPage.tsx`](file:///d:/healthcare/src/routes/FamiliesPage.tsx)) family care hub connecting to Waiting Room Live.
   - Added unit test suite [`tests/unit/phase5.test.tsx`](file:///d:/healthcare/tests/unit/phase5.test.tsx).
 
-- **Phase 6 — Departments, Doctors & Circle of Care** (commit: `phase-6-complete`)
+- **Phase 6 — Departments, Doctors & Circle of Care** (commit: `f28859e`)
   - Created 12 medical departments in [`src/data/departments.ts`](file:///d:/healthcare/src/data/departments.ts) with bilingual copy, conditions treated, diagnostic tests, and department head links.
   - Created fictional staff & leadership directory in [`src/data/people.ts`](file:///d:/healthcare/src/data/people.ts) with mandatory demo registration IDs and bios.
   - Built `/departments` listing with audience filters (`All`, `Adult`, `Child`, `Women`, `Senior`) and `/departments/:slug` detail page with department head cards and FAQ accordion.
@@ -65,17 +65,28 @@ Phase 6 — Departments, Doctors & Circle of Care (Complete)
   - Built `/book` appointment booking wizard with department/doctor prefilling and demo confirmation modal.
   - Added unit test suite [`tests/unit/phase6.test.tsx`](file:///d:/healthcare/tests/unit/phase6.test.tsx).
 
+- **Phase 7 — Clear Ledger, Health Packages & International** (commit: `phase-7-complete`)
+  - Created financial scenario dataset in [`src/data/ledger.ts`](file:///d:/healthcare/src/data/ledger.ts) with room tier multipliers (`ward`, `semi`, `private`, `icu`), volatility alerts, empaneled insurance list, and 0% EMI schemes.
+  - Created health screening catalog in [`src/data/packages.ts`](file:///d:/healthcare/src/data/packages.ts) with category tags, test inclusions, prep guidelines, and home sample collection flags.
+  - Created international desk dataset in [`src/data/international.ts`](file:///d:/healthcare/src/data/international.ts) with 4-step medical travel roadmap, MVIL assistance, multilingual interpreter support, and contact channels.
+  - Created diagnostic test directory in [`src/data/diagnostics.ts`](file:///d:/healthcare/src/data/diagnostics.ts) with TAT turn-around times, preparation instructions, and code search.
+  - Built `/ledger` financial transparency page with interactive pre-procedure cost calculator and formal estimate request modal.
+  - Built `/packages` health check catalog with category filters and checkup booking modal.
+  - Built `/international` overseas patient desk landing page with visa request modal.
+  - Built `/diagnostics` diagnostic directory with code search, preparation drawers, and sample booking modal.
+  - Added unit test suite [`tests/unit/phase7.test.tsx`](file:///d:/healthcare/tests/unit/phase7.test.tsx).
+
 ## Next phase
-**Phase 7 — Clear Ledger, Health Packages & International**
+**Phase 8 — Patient Knowledge & Plain-Language Portal**
 *Scope (from File 08):*
-Financial transparency ledger (`/ledger`), health check packages (`/packages`), international care desk (`/international`), and diagnostic directory (`/diagnostics`).
+Condition guide, 3-layer article format (30s / 3m / Deep dive), plain-language medical report explainer (`/portal`), careers page (`/careers`), and static policy pages (`/about`, `/contact`, `/sitemap`, `/accessibility`, `/demo-disclosure`).
 
 ## Decisions & assumptions
-- Fictional disclaimers are placed on all doctor profile cards and booking interactions per compliance guidelines.
-- Department head connections are explicitly linked between `departments.ts` and `people.ts`.
+- All price calculator estimates carry explicit non-binding compliance disclaimers per File 01 rules.
+- Diagnostic TAT turn-around times are stated in hours with clear fasting guidelines.
 
 ## Open questions / [VERIFY] items
 - None.
 
 ## Known issues
-- None. All quality checks (typecheck, lint, vitest 23/23, check:i18n, check:denylist, build) green.
+- None. All quality checks (typecheck, lint, vitest 28/28, check:i18n, check:denylist, build) green.

@@ -46,10 +46,13 @@ export interface Person {
 export interface Package {
   id: string;
   name: I18n;
+  category: 'preventive' | 'senior' | 'cardiac' | 'women' | 'comprehensive';
   includes: I18n[];
   prep: I18n[];
   durationMin: number;
   audience: string;
+  price: number;
+  sampleMode: I18n;
 }
 
 export interface PathStop {
@@ -72,9 +75,36 @@ export interface JourneyPath {
 export interface LedgerScenario {
   id: string;
   title: I18n;
-  components: { key: string; min: number; max: number }[];
-  roomMultipliers: Record<'ward' | 'semi' | 'private', number>;
+  category: I18n;
+  components: { key: I18n; min: number; max: number }[];
+  roomMultipliers: Record<'ward' | 'semi' | 'private' | 'icu', number>;
   volatility: I18n[];
+  financialAidEligible: boolean;
+}
+
+export interface InternationalService {
+  id: string;
+  title: I18n;
+  desc: I18n;
+  icon: string;
+}
+
+export interface InternationalDesk {
+  visaSteps: { step: number; title: I18n; detail: I18n }[];
+  services: InternationalService[];
+  partnerships: string[];
+  contact: { email: string; phone: string; whatsapp: string };
+}
+
+export interface DiagnosticItem {
+  id: string;
+  code: string;
+  name: I18n;
+  category: 'radiology' | 'pathology' | 'cardiac' | 'genomics';
+  tatHours: number;
+  prepInstructions: I18n[];
+  homeSample: boolean;
+  price: number;
 }
 
 export interface GuideRule {
