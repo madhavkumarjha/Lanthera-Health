@@ -6,6 +6,10 @@ import { Header } from '../components/shell/Header';
 import { Footer } from '../components/shell/Footer';
 import { ConsentGateModal } from '../components/shell/ConsentGateModal';
 import { FloatingLauncher } from '../components/shell/FloatingLauncher';
+import { Loader } from '../components/shell/Loader';
+import { ScrollProgress } from '../components/shell/ScrollProgress';
+import { CustomCursor } from '../components/shell/CustomCursor';
+import { PageTransition } from '../components/shell/PageTransition';
 import { useCommandPalette } from '../hooks/useCommandPalette';
 import { Modal } from '../components/ui/Modal';
 import { siteConfig } from '../config/site';
@@ -17,6 +21,15 @@ export function RootLayout() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)] transition-colors duration-300">
+      {/* Session Ignition Loader */}
+      <Loader />
+
+      {/* Wick Line Scroll Progress */}
+      <ScrollProgress />
+
+      {/* Custom Glowing Cursor Follower */}
+      <CustomCursor />
+
       {/* Demo Banner */}
       {siteConfig.demoBanner && <DemoBanner />}
 
@@ -31,9 +44,11 @@ export function RootLayout() {
         Skip to main content
       </a>
 
-      {/* Main Content Area */}
+      {/* Main Content Area with Page Transition */}
       <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
-        <Outlet />
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
       </main>
 
       {/* Footer */}

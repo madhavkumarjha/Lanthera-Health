@@ -1,5 +1,78 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2026-09-30T06:39:27.804Z",
-  "assets": []
+  "generatedAt": "2026-09-30T07:10:30.933Z",
+  "assets": [
+    {
+      "id": "hero-01",
+      "path": "img/hero/hero-01.webp",
+      "fallbackSvg": "img/hero/hero-01.svg",
+      "prompt": "Night corridor with lantern-like light, warm amber practical lighting with deep aubergine shadows, cinematic editorial photography, 35mm, shallow depth of field, soft film grain, natural diverse people, calm and dignified mood",
+      "size": "1920x1080",
+      "status": "procedural-generated",
+      "alt": {
+        "en": "Quiet hospital corridor lit by warm amber night lights.",
+        "hi": "गर्म एम्बर नाइट लाइटों से रोशन शांत अस्पताल का गलियारा।"
+      }
+    },
+    {
+      "id": "hero-02",
+      "path": "img/hero/hero-02.webp",
+      "fallbackSvg": "img/hero/hero-02.svg",
+      "prompt": "Hands held in waiting room under gentle warm light, low-key lighting, shallow depth of field, soft film grain, natural diverse people, calm and dignified mood",
+      "size": "1920x1080",
+      "status": "procedural-generated",
+      "alt": {
+        "en": "Comforting gesture in a quiet family waiting space.",
+        "hi": "शांत प्रतीक्षा क्षेत्र में सांत्वना देने वाला दृश्य।"
+      }
+    },
+    {
+      "id": "hero-03",
+      "path": "img/hero/hero-03.webp",
+      "fallbackSvg": "img/hero/hero-03.svg",
+      "prompt": "Early morning ward rounds, soft dawn glow through wide windows, warm practical lighting, shallow depth of field, soft film grain, natural diverse people, calm and dignified mood",
+      "size": "1920x1080",
+      "status": "procedural-generated",
+      "alt": {
+        "en": "Care team starting morning rounds as dawn enters the ward.",
+        "hi": "भोर के समय वार्ड में सुबह के राउंड शुरू करती केयर टीम।"
+      }
+    },
+    {
+      "id": "hero-04",
+      "path": "img/hero/hero-04.webp",
+      "fallbackSvg": "img/hero/hero-04.svg",
+      "prompt": "24x7 Night watch team at central station, amber glowing displays, focused professionals, quiet atmosphere, shallow depth of field",
+      "size": "1920x1080",
+      "status": "procedural-generated",
+      "alt": {
+        "en": "Night watch care team monitoring patient wellbeing at night.",
+        "hi": "रात के समय मरीज की भलाई पर नजर रखती नाइट वॉच टीम।"
+      }
+    },
+    {
+      "id": "hero-05",
+      "path": "img/hero/hero-05.webp",
+      "fallbackSvg": "img/hero/hero-05.svg",
+      "prompt": "Hospital main garden illuminated by warm evening lanterns, serene architectural view, calm dignified mood",
+      "size": "1920x1080",
+      "status": "procedural-generated",
+      "alt": {
+        "en": "Serene hospital courtyard garden illuminated at dusk.",
+        "hi": "शाम के समय रोशन शांत अस्पताल प्रांगण का बगीचा।"
+      }
+    },
+    {
+      "id": "hero-06",
+      "path": "img/hero/hero-06.webp",
+      "fallbackSvg": "img/hero/hero-06.svg",
+      "prompt": "Family receiving guided care plan from specialist in warm consultation room, empathetic tone, warm amber lighting",
+      "size": "1920x1080",
+      "status": "procedural-generated",
+      "alt": {
+        "en": "Doctor explaining care plan to family with calm reassurance.",
+        "hi": "डॉक्टर परिवार को शांत विश्वास के साथ देखभाल योजना समझाते हुए।"
+      }
+    }
+  ]
 }

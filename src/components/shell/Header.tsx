@@ -1,15 +1,14 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router';
-import { useTranslation } from 'react-i18next';
 import { Search, Sun, Moon, Sparkles, Menu, X } from 'lucide-react';
 import { EmergencyPill } from './EmergencyPill';
+import { Logo } from '../brand/Logo';
 import { usePrefsStore } from '../../store/prefs';
 import { useLocale } from '../../hooks/useLocale';
 import { mainNav } from '../../config/nav';
 import { Button } from '../ui/Button';
 
 export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
-  const { t } = useTranslation();
   const { locale, changeLocale } = useLocale();
   const { theme, setTheme, textSize, setTextSize, calmMode, setCalmMode } = usePrefsStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,21 +29,7 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
     <header className="sticky top-0 z-30 bg-[var(--bg)]/90 backdrop-blur-md border-b border-[var(--line)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
         {/* Brand Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-full bg-[var(--surface-2)] border border-[var(--line)] flex items-center justify-center text-[var(--accent)] group-hover:border-[var(--accent)] transition-colors">
-            <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
-              <path d="M12 2L15 8H9L12 2ZM12 22C7.58 22 4 18.42 4 14C4 11.5 5.15 9.27 7 7.82V14C7 16.76 9.24 19 12 19C14.76 19 17 16.76 17 14V7.82C18.85 9.27 20 11.5 20 14C20 18.42 16.42 22 12 22Z" />
-            </svg>
-          </div>
-          <div className="flex flex-col">
-            <span className="font-display font-semibold text-lg leading-none tracking-tight">
-              {t('brandName', 'Lanthera Health')}
-            </span>
-            <span className="text-[10px] font-mono text-[var(--text-muted)] tracking-wider uppercase mt-1">
-              {t('tagline', 'The light stays on.')}
-            </span>
-          </div>
-        </Link>
+        <Logo variant="primary" size="md" />
 
         {/* Desktop Main Navigation */}
         <nav className="hidden lg:flex items-center gap-6 text-sm font-medium">

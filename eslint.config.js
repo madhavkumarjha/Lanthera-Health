@@ -37,6 +37,9 @@ export default [
         Event: 'readonly',
         MouseEvent: 'readonly',
         KeyboardEvent: 'readonly',
+        Buffer: 'readonly',
+        requestAnimationFrame: 'readonly',
+        cancelAnimationFrame: 'readonly',
         process: 'readonly',
         describe: 'readonly',
         it: 'readonly',
@@ -57,11 +60,11 @@ export default [
       ...tsPlugin.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
       ...jsxA11y.configs.recommended.rules,
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
       '@typescript-eslint/no-explicit-any': 'off',
     },
   },
   {
-    ignores: ['dist', 'node_modules', 'coverage', 'playwright-report'],
+    ignores: ['dist', 'node_modules', 'coverage', 'playwright-report', 'scripts'],
   },
 ];
