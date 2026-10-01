@@ -24,10 +24,12 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
   };
 
   return (
-    <header className="sticky top-0 z-30 bg-[var(--bg)]/90 backdrop-blur-md border-b border-[var(--line)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+    <header className="sticky top-0 z-30 bg-[var(--bg)]/90 backdrop-blur-md border-b border-[var(--line)] w-full">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-1 sm:gap-4 overflow-hidden">
         {/* Brand Logo */}
-        <Logo variant="primary" size="md" />
+        <div className="shrink-0 scale-90 sm:scale-100 origin-left">
+          <Logo variant="primary" size="md" />
+        </div>
 
         {/* Desktop Main Navigation */}
         <nav className="hidden lg:flex items-center gap-6 text-sm font-medium">
@@ -47,7 +49,7 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
         </nav>
 
         {/* Controls & Emergency Action */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
           {/* Emergency Pill — Always Visible */}
           <EmergencyPill />
 
@@ -56,11 +58,11 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
             variant="ghost"
             size="sm"
             onClick={onOpenCommand}
-            className="hidden sm:inline-flex items-center gap-1.5 font-mono text-xs text-[var(--text-muted)]"
+            className="hidden md:inline-flex items-center gap-1.5 font-mono text-xs text-[var(--text-muted)]"
             aria-label="Open command palette"
           >
             <Search className="w-4 h-4" />
-            <span className="hidden md:inline">⌘K</span>
+            <span>⌘K</span>
           </Button>
 
           {/* Language Toggle */}
@@ -68,7 +70,7 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
             variant="ghost"
             size="sm"
             onClick={() => changeLocale(locale === 'en' ? 'hi' : 'en')}
-            className="font-mono text-xs uppercase px-2"
+            className="font-mono text-xs uppercase px-1.5 sm:px-2 h-8 sm:h-9"
             aria-label="Toggle language"
           >
             {locale === 'en' ? 'HI' : 'EN'}
@@ -79,7 +81,7 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
             variant="ghost"
             size="sm"
             onClick={toggleTheme}
-            className="p-2 h-9 w-9"
+            className="p-1 sm:p-2 h-8 w-8 sm:h-9 sm:w-9"
             aria-label={`Current theme: ${theme}. Click to change.`}
           >
             {theme === 'light' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -102,7 +104,7 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
             variant="ghost"
             size="sm"
             onClick={cycleTextSize}
-            className="font-mono text-xs px-2 hidden sm:inline-flex"
+            className="font-mono text-xs px-2 hidden lg:inline-flex"
             aria-label={`Text size ${textSize}%. Click to change.`}
           >
             {textSize}%
@@ -113,7 +115,7 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
             variant="ghost"
             size="sm"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 h-9 w-9"
+            className="lg:hidden p-1.5 sm:p-2 h-8 w-8 sm:h-9 sm:w-9"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -123,17 +125,29 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <nav className="lg:hidden border-t border-[var(--line)] bg-[var(--surface)] p-4 flex flex-col gap-3">
+        <nav className="lg:hidden border-t border-[var(--line)] bg-[var(--surface)] p-4 flex flex-col gap-3 shadow-xl">
           {mainNav.map((item) => (
             <Link
               key={item.href}
               to={item.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="py-2 px-3 rounded-[var(--radius-sm)] text-sm font-medium hover:bg-[var(--surface-2)]"
+              className="py-2.5 px-3 rounded-[var(--radius-sm)] text-sm font-medium hover:bg-[var(--surface-2)] flex items-center justify-between"
             >
-              {item.label[locale]}
+              <span>{item.label[locale]}</span>
             </Link>
           ))}
+          {/* Mobile Controls in Menu */}
+          <div className="pt-3 border-t border-[var(--line)] flex items-center justify-between text-xs font-mono text-[var(--text-muted)]">
+            <span>Calm Mode:</span>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setCalmMode(!calmMode)}
+              className={`text-xs border border-[var(--line)] ${calmMode ? 'text-[var(--sage)] border-[var(--sage)] font-bold' : ''}`}
+            >
+              {calmMode ? 'Active' : 'Off'}
+            </Button>
+          </div>
         </nav>
       )}
     </header>
