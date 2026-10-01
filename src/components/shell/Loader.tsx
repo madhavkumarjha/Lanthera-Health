@@ -31,7 +31,7 @@ export const Loader: React.FC = () => {
     <div
       role="status"
       aria-label="Loading Lanthera Health"
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[var(--bg)] transition-opacity duration-300 pointer-events-none"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[var(--bg)] transition-opacity duration-300 pointer-events-none overflow-hidden"
     >
       <div className="flex flex-col items-center gap-4 animate-fade-in">
         <div className="relative">
