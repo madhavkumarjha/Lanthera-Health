@@ -122,14 +122,14 @@ export default function PathPage() {
           </div>
 
           {/* Current Stop Position Control */}
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-[var(--text-muted)] font-mono">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 w-full sm:w-auto max-w-full min-w-0">
+            <span className="text-xs text-[var(--text-muted)] font-mono shrink-0">
               {isHi ? 'आप इस समय कहाँ हैं?' : 'Where are you now?'}
             </span>
             <select
               value={activeStopIndex}
               onChange={(e) => setActiveStopIndex(Number(e.target.value))}
-              className="px-3 py-1.5 rounded-[var(--radius-sm)] bg-[var(--surface)] border border-[var(--line)] text-xs text-[var(--text)] focus:outline-none focus:border-[var(--accent)]"
+              className="w-full sm:w-auto max-w-full min-w-0 px-3 py-1.5 rounded-[var(--radius-sm)] bg-[var(--surface)] border border-[var(--line)] text-xs text-[var(--text)] focus:outline-none focus:border-[var(--accent)]"
             >
               {activeJourney.stops.map((stop, idx) => (
                 <option key={stop.id} value={idx}>

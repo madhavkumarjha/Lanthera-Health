@@ -24,10 +24,10 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
   };
 
   return (
-    <header className="sticky top-0 z-30 bg-[var(--bg)]/90 backdrop-blur-md border-b border-[var(--line)] w-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
+    <header className="sticky top-0 z-30 bg-[var(--bg)]/90 backdrop-blur-md border-b border-[var(--line)] w-full max-w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-1.5 sm:gap-4 w-full">
         {/* Brand Logo */}
-        <div className="shrink-0 flex items-center">
+        <div className="shrink min-w-0 flex items-center">
           <Logo variant="primary" size="md" />
         </div>
 
@@ -49,7 +49,7 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
         </nav>
 
         {/* Controls & Emergency Action */}
-        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
           {/* Emergency Pill — Always Visible */}
           <EmergencyPill />
 
@@ -69,7 +69,7 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
           <button
             type="button"
             onClick={() => changeLocale(locale === 'en' ? 'hi' : 'en')}
-            className="h-8 px-2 rounded-[var(--radius-sm)] border border-[var(--line)] hover:border-[var(--accent)] text-xs font-mono font-bold uppercase transition-colors text-[var(--text)] hover:text-[var(--accent)] bg-[var(--surface-2)]/60 cursor-pointer"
+            className="h-7.5 sm:h-8 px-1.5 sm:px-2 rounded-[var(--radius-sm)] border border-[var(--line)] hover:border-[var(--accent)] text-xs font-mono font-bold uppercase transition-colors text-[var(--text)] hover:text-[var(--accent)] bg-[var(--surface-2)]/60 cursor-pointer"
             aria-label="Toggle language"
           >
             {locale === 'en' ? 'HI' : 'EN'}
@@ -79,7 +79,7 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
           <button
             type="button"
             onClick={toggleTheme}
-            className="h-8 w-8 rounded-[var(--radius-sm)] border border-[var(--line)] hover:border-[var(--accent)] flex items-center justify-center transition-colors text-[var(--text-muted)] hover:text-[var(--text)] bg-[var(--surface-2)]/60 cursor-pointer"
+            className="h-7.5 w-7.5 sm:h-8 sm:w-8 rounded-[var(--radius-sm)] border border-[var(--line)] hover:border-[var(--accent)] flex items-center justify-center transition-colors text-[var(--text-muted)] hover:text-[var(--text)] bg-[var(--surface-2)]/60 cursor-pointer"
             aria-label={`Current theme: ${theme}. Click to change.`}
           >
             {theme === 'light' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -112,7 +112,7 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden h-8 w-8 rounded-[var(--radius-sm)] border border-[var(--line)] hover:border-[var(--accent)] flex items-center justify-center text-[var(--text)] transition-colors bg-[var(--surface-2)]/60 cursor-pointer"
+            className="lg:hidden h-7.5 w-7.5 sm:h-8 sm:w-8 rounded-[var(--radius-sm)] border border-[var(--line)] hover:border-[var(--accent)] flex items-center justify-center text-[var(--text)] transition-colors bg-[var(--surface-2)]/60 cursor-pointer"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}

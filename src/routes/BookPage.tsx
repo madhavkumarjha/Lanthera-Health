@@ -103,8 +103,8 @@ export default function BookPage() {
                 1. Select Department & Specialist
               </h2>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                <label className="flex flex-col gap-1 text-xs font-semibold text-[var(--text)]">
+              <div className="grid sm:grid-cols-2 gap-4 min-w-0">
+                <label className="flex flex-col gap-1 text-xs font-semibold text-[var(--text)] min-w-0">
                   Department
                   <select
                     value={selectedDeptSlug}
@@ -113,7 +113,7 @@ export default function BookPage() {
                       const docs = people.filter((p) => p.dept === e.target.value || p.kind === 'head');
                       if (docs[0]) setSelectedDoctorId(docs[0].id);
                     }}
-                    className="p-3 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)] focus:outline-none focus:border-[var(--accent)]"
+                    className="w-full max-w-full min-w-0 p-3 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)] focus:outline-none focus:border-[var(--accent)]"
                   >
                     {departments.map((d) => (
                       <option key={d.slug} value={d.slug}>
@@ -123,12 +123,12 @@ export default function BookPage() {
                   </select>
                 </label>
 
-                <label className="flex flex-col gap-1 text-xs font-semibold text-[var(--text)]">
+                <label className="flex flex-col gap-1 text-xs font-semibold text-[var(--text)] min-w-0">
                   Specialist Doctor
                   <select
                     value={selectedDoctorId}
                     onChange={(e) => setSelectedDoctorId(e.target.value)}
-                    className="p-3 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)] focus:outline-none focus:border-[var(--accent)]"
+                    className="w-full max-w-full min-w-0 p-3 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)] focus:outline-none focus:border-[var(--accent)]"
                   >
                     {availableDoctors.map((doc) => (
                       <option key={doc.id} value={doc.id}>
@@ -141,15 +141,15 @@ export default function BookPage() {
             </div>
 
             {/* Step 2: Mode, Date & Time */}
-            <div className="flex flex-col gap-4 pt-4 border-t border-[var(--line)]">
+            <div className="flex flex-col gap-4 pt-4 border-t border-[var(--line)] min-w-0">
               <h2 className="font-display text-xl font-bold text-[var(--text)] flex items-center gap-2">
                 <Clock className="w-5 h-5 text-[var(--accent)]" />
                 2. Consultation Mode, Date & Time Slot
               </h2>
 
-              <div className="grid sm:grid-cols-3 gap-4">
+              <div className="grid sm:grid-cols-3 gap-4 min-w-0">
                 {/* Mode Selector */}
-                <div className="flex flex-col gap-1 text-xs font-semibold text-[var(--text)]">
+                <div className="flex flex-col gap-1 text-xs font-semibold text-[var(--text)] min-w-0">
                   Consultation Mode
                   <div className="flex gap-2">
                     <button
@@ -177,22 +177,22 @@ export default function BookPage() {
                   </div>
                 </div>
 
-                <label className="flex flex-col gap-1 text-xs font-semibold text-[var(--text)]">
+                <label className="flex flex-col gap-1 text-xs font-semibold text-[var(--text)] min-w-0">
                   Preferred Date
                   <input
                     type="date"
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
-                    className="p-2.5 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
+                    className="w-full max-w-full min-w-0 p-2.5 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
                   />
                 </label>
 
-                <label className="flex flex-col gap-1 text-xs font-semibold text-[var(--text)]">
+                <label className="flex flex-col gap-1 text-xs font-semibold text-[var(--text)] min-w-0">
                   Time Slot
                   <select
                     value={slot}
                     onChange={(e) => setSlot(e.target.value)}
-                    className="p-2.5 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
+                    className="w-full max-w-full min-w-0 p-2.5 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
                   >
                     <option value="09:30 AM">09:30 AM</option>
                     <option value="10:00 AM">10:00 AM</option>
@@ -205,32 +205,32 @@ export default function BookPage() {
             </div>
 
             {/* Step 3: Patient Info */}
-            <div className="flex flex-col gap-4 pt-4 border-t border-[var(--line)]">
+            <div className="flex flex-col gap-4 pt-4 border-t border-[var(--line)] min-w-0">
               <h2 className="font-display text-xl font-bold text-[var(--text)] flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-[var(--accent)]" />
                 3. Patient Contact Information
               </h2>
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                <label className="flex flex-col gap-1 text-xs font-semibold text-[var(--text)]">
+              <div className="grid sm:grid-cols-2 gap-4 min-w-0">
+                <label className="flex flex-col gap-1 text-xs font-semibold text-[var(--text)] min-w-0">
                   Full Name
                   <input
                     type="text"
                     required
                     value={patientName}
                     onChange={(e) => setPatientName(e.target.value)}
-                    className="p-2.5 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
+                    className="w-full max-w-full min-w-0 p-2.5 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
                   />
                 </label>
 
-                <label className="flex flex-col gap-1 text-xs font-semibold text-[var(--text)]">
+                <label className="flex flex-col gap-1 text-xs font-semibold text-[var(--text)] min-w-0">
                   Mobile Number
                   <input
                     type="text"
                     required
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="p-2.5 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
+                    className="w-full max-w-full min-w-0 p-2.5 rounded-[var(--radius-sm)] bg-[var(--surface-2)] border border-[var(--line)] text-sm text-[var(--text)]"
                   />
                 </label>
               </div>

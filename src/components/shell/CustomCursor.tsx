@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
 
 export const CustomCursor: React.FC = () => {
-  const [pos, setPos] = useState({ x: -100, y: -100 });
+  const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    // Disable on touch devices or reduced motion
-    const touchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    const reducedMotion = typeof window.matchMedia === 'function' ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
+    // Only enable on desktop pointer devices with fine pointer and viewport >= 1024px
+    const isFinePointer = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+    const isMobileWidth = typeof window !== 'undefined' && window.innerWidth < 1024;
+    const touchDevice = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    const reducedMotion = typeof window !== 'undefined' && window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
 
-    if (touchDevice || reducedMotion) {
+    if (!isFinePointer || isMobileWidth || touchDevice || reducedMotion) {
       setEnabled(false);
       return;
     }
@@ -22,10 +24,18 @@ export const CustomCursor: React.FC = () => {
     let targetY = -100;
     let currentX = -100;
     let currentY = -100;
+    let initialized = false;
 
     const onMouseMove = (e: MouseEvent) => {
       targetX = e.clientX;
       targetY = e.clientY;
+
+      if (!initialized) {
+        currentX = targetX;
+        currentY = targetY;
+        initialized = true;
+        setPos({ x: targetX, y: targetY });
+      }
 
       // Check if target element is interactive
       const target = e.target as HTMLElement | null;
@@ -43,10 +53,11 @@ export const CustomCursor: React.FC = () => {
     };
 
     const render = () => {
-      // Lerp 0.18 per File 05 §4
-      currentX += (targetX - currentX) * 0.18;
-      currentY += (targetY - currentY) * 0.18;
-      setPos({ x: currentX, y: currentY });
+      if (initialized) {
+        currentX += (targetX - currentX) * 0.18;
+        currentY += (targetY - currentY) * 0.18;
+        setPos({ x: currentX, y: currentY });
+      }
       animationFrameId = requestAnimationFrame(render);
     };
 
@@ -59,7 +70,7 @@ export const CustomCursor: React.FC = () => {
     };
   }, []);
 
-  if (!enabled) return null;
+  if (!enabled || !pos) return null;
 
   const size = isHovered ? 48 : 24;
 

@@ -36,7 +36,7 @@ export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
           aria-hidden="true"
           className="fixed inset-0 z-[80] pointer-events-none transition-opacity duration-300 flex items-center justify-center overflow-hidden max-w-full"
         >
-          <div className="w-[100vw] h-[100vw] max-w-none rounded-full bg-radial from-[var(--accent)] via-[var(--surface-2)] to-transparent opacity-30 animate-ping" />
+          <div className="w-full h-full max-w-full max-h-full rounded-full bg-radial from-[var(--accent)] via-[var(--surface-2)] to-transparent opacity-30 animate-ping" />
         </div>
       )}
 

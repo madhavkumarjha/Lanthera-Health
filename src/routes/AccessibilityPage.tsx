@@ -7,17 +7,17 @@ export default function AccessibilityPage() {
   const isHi = locale === 'hi';
 
   return (
-    <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto flex flex-col gap-8">
+    <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto flex flex-col gap-8 w-full max-w-full overflow-hidden">
       {/* Header */}
-      <div className="border-b border-[var(--line)] pb-6">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--surface-2)] text-xs font-mono text-[var(--accent)] uppercase tracking-wider mb-2">
-          <Eye className="w-3.5 h-3.5" />
-          {isHi ? 'सुगमता कथन (Accessibility Statement)' : 'Accessibility Commitment'}
+      <div className="border-b border-[var(--line)] pb-6 w-full min-w-0">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--surface-2)] text-xs font-mono text-[var(--accent)] uppercase tracking-wider mb-2 max-w-full">
+          <Eye className="w-3.5 h-3.5 shrink-0" />
+          <span className="truncate">{isHi ? 'सुगमता कथन (Accessibility Statement)' : 'Accessibility Commitment'}</span>
         </div>
-        <h1 className="font-display text-3xl sm:text-4xl font-bold text-[var(--text)]">
+        <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--text)] break-words">
           {isHi ? 'सभी के लिए सुगम एवं समावेशी डिजिटल स्वास्थ्य सेवा' : 'Inclusive & Accessible Healthcare for Everyone'}
         </h1>
-        <p className="text-sm text-[var(--text-muted)] mt-1 max-w-2xl leading-relaxed">
+        <p className="text-sm text-[var(--text-muted)] mt-1 max-w-2xl leading-relaxed break-words">
           {isHi
             ? 'लैंथेरा हेल्थ वेब पोर्टल WCAG 2.1 AA मानकों का पालन करता है ताकि स्क्रीन रीडर, उच्च-विषमता एवं शांत मोड समर्थित हो।'
             : 'Designed to conform with Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards.'}

@@ -84,20 +84,20 @@ export default function LedgerPage() {
       {/* Calculator Main Section */}
       <div className="grid lg:grid-cols-12 gap-8">
         {/* Controls Column */}
-        <div className="lg:col-span-5 flex flex-col gap-6">
-          <Card shape="lantern" glow={true} className="p-6 flex flex-col gap-5 bg-[var(--surface-2)] shadow-lg">
+        <div className="lg:col-span-5 flex flex-col gap-6 min-w-0">
+          <Card shape="lantern" glow={true} className="p-4 sm:p-6 flex flex-col gap-5 bg-[var(--surface-2)] shadow-lg min-w-0">
             <h2 className="font-display text-xl font-bold text-[var(--text)] flex items-center gap-2">
               <Calculator className="w-5 h-5 text-[var(--accent)]" />
               {isHi ? '1. प्रक्रिया व कमरा चुनें' : '1. Select Procedure & Room'}
             </h2>
 
             {/* Select Procedure */}
-            <label className="flex flex-col gap-1.5 text-xs font-semibold text-[var(--text)]">
+            <label className="flex flex-col gap-1.5 text-xs font-semibold text-[var(--text)] min-w-0">
               {isHi ? 'प्रक्रिया / सर्जरी' : 'Medical Procedure'}
               <select
                 value={selectedScenarioId}
                 onChange={(e) => setSelectedScenarioId(e.target.value)}
-                className="p-3 rounded-[var(--radius-sm)] bg-[var(--surface)] border border-[var(--line)] text-sm text-[var(--text)] focus:outline-none focus:border-[var(--accent)]"
+                className="w-full max-w-full min-w-0 p-3 rounded-[var(--radius-sm)] bg-[var(--surface)] border border-[var(--line)] text-sm text-[var(--text)] focus:outline-none focus:border-[var(--accent)]"
               >
                 {ledgerScenarios.map((s) => (
                   <option key={s.id} value={s.id}>
@@ -108,9 +108,9 @@ export default function LedgerPage() {
             </label>
 
             {/* Select Room Type */}
-            <div className="flex flex-col gap-2 text-xs font-semibold text-[var(--text)]">
+            <div className="flex flex-col gap-2 text-xs font-semibold text-[var(--text)] min-w-0">
               <span>{isHi ? 'कमरे / वार्ड की श्रेणी:' : 'Accommodation Tier:'}</span>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 gap-2 min-w-0">
                 {(
                   [
                     { id: 'ward', label: isHi ? 'जनरल वार्ड' : 'General Ward', mult: '1.0×' },

@@ -15,9 +15,9 @@ export const Logo: React.FC<LogoProps> = ({
   showText = true,
 }) => {
   const sizeClasses = {
-    sm: { svg: 'w-6 h-6 sm:w-8 sm:h-8', text: 'text-base sm:text-xl' },
-    md: { svg: 'w-7 h-7 sm:w-10 sm:h-10', text: 'text-lg sm:text-2xl' },
-    lg: { svg: 'w-9 h-9 sm:w-12 sm:h-12', text: 'text-xl sm:text-3xl' },
+    sm: { svg: 'w-5 h-5 sm:w-8 sm:h-8', text: 'text-sm sm:text-xl' },
+    md: { svg: 'w-6 h-6 sm:w-10 sm:h-10', text: 'text-base sm:text-2xl' },
+    lg: { svg: 'w-8 h-8 sm:w-12 sm:h-12', text: 'text-lg sm:text-3xl' },
   };
   const { svg, text } = sizeClasses[size];
 
