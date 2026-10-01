@@ -24,11 +24,11 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
   };
 
   return (
-    <header className="sticky top-0 z-30 bg-[var(--bg)]/90 backdrop-blur-md border-b border-[var(--line)] w-full max-w-full overflow-hidden">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-1 sm:gap-4 overflow-hidden">
+    <header className="sticky top-0 z-30 bg-[var(--bg)]/90 backdrop-blur-md border-b border-[var(--line)] w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
         {/* Brand Logo */}
-        <div className="shrink-0 origin-left">
-          <Logo variant="primary" size="md" className="scale-90 sm:scale-100 origin-left" />
+        <div className="shrink-0 flex items-center">
+          <Logo variant="primary" size="md" />
         </div>
 
         {/* Desktop Main Navigation */}
@@ -49,7 +49,7 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
         </nav>
 
         {/* Controls & Emergency Action */}
-        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           {/* Emergency Pill — Always Visible */}
           <EmergencyPill />
 
@@ -66,60 +66,57 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
           </Button>
 
           {/* Language Toggle */}
-          <Button
-            variant="ghost"
-            size="sm"
+          <button
+            type="button"
             onClick={() => changeLocale(locale === 'en' ? 'hi' : 'en')}
-            className="font-mono text-xs uppercase px-1.5 sm:px-2 h-8 sm:h-9"
+            className="h-8 px-2 rounded-[var(--radius-sm)] border border-[var(--line)] hover:border-[var(--accent)] text-xs font-mono font-bold uppercase transition-colors text-[var(--text)] hover:text-[var(--accent)] bg-[var(--surface-2)]/60 cursor-pointer"
             aria-label="Toggle language"
           >
             {locale === 'en' ? 'HI' : 'EN'}
-          </Button>
+          </button>
 
           {/* Theme Toggle */}
-          <Button
-            variant="ghost"
-            size="sm"
+          <button
+            type="button"
             onClick={toggleTheme}
-            className="p-1 sm:p-2 h-8 w-8 sm:h-9 sm:w-9"
+            className="h-8 w-8 rounded-[var(--radius-sm)] border border-[var(--line)] hover:border-[var(--accent)] flex items-center justify-center transition-colors text-[var(--text-muted)] hover:text-[var(--text)] bg-[var(--surface-2)]/60 cursor-pointer"
             aria-label={`Current theme: ${theme}. Click to change.`}
           >
             {theme === 'light' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </Button>
+          </button>
 
-          {/* Calm Mode Toggle */}
-          <Button
-            variant="ghost"
-            size="sm"
+          {/* Calm Mode Toggle (Desktop only) */}
+          <button
+            type="button"
             onClick={() => setCalmMode(!calmMode)}
-            className={`p-2 h-9 w-9 hidden md:inline-flex ${calmMode ? 'text-[var(--sage)]' : ''}`}
+            className={`h-9 w-9 rounded-[var(--radius-sm)] border border-[var(--line)] hidden md:inline-flex items-center justify-center transition-colors ${
+              calmMode ? 'text-[var(--sage)] border-[var(--sage)]' : 'text-[var(--text-muted)]'
+            } cursor-pointer`}
             aria-label="Toggle Calm Mode"
             title="Calm Mode"
           >
             <Sparkles className="w-4 h-4" />
-          </Button>
+          </button>
 
-          {/* Text Size Toggle */}
-          <Button
-            variant="ghost"
-            size="sm"
+          {/* Text Size Toggle (Desktop only) */}
+          <button
+            type="button"
             onClick={cycleTextSize}
-            className="font-mono text-xs px-2 hidden lg:inline-flex"
+            className="font-mono text-xs px-2.5 h-9 border border-[var(--line)] rounded-[var(--radius-sm)] hidden lg:inline-flex items-center cursor-pointer"
             aria-label={`Text size ${textSize}%. Click to change.`}
           >
             {textSize}%
-          </Button>
+          </button>
 
           {/* Mobile Menu Toggle */}
-          <Button
-            variant="ghost"
-            size="sm"
+          <button
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-1.5 sm:p-2 h-8 w-8 sm:h-9 sm:w-9"
+            className="lg:hidden h-8 w-8 rounded-[var(--radius-sm)] border border-[var(--line)] hover:border-[var(--accent)] flex items-center justify-center text-[var(--text)] transition-colors bg-[var(--surface-2)]/60 cursor-pointer"
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </Button>
+            {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+          </button>
         </div>
       </div>
 
