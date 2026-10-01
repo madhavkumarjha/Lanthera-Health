@@ -24,11 +24,12 @@ export function Header({ onOpenCommand }: { onOpenCommand?: () => void }) {
   };
 
   return (
-    <header className="sticky top-0 z-30 bg-[var(--bg)]/90 backdrop-blur-md border-b border-[var(--line)] w-full">
+    <header className="sticky top-0 z-30 bg-[var(--bg)]/90 backdrop-blur-md border-b border-[var(--line)] w-full max-w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-1 sm:gap-4 overflow-hidden">
         {/* Brand Logo */}
-        <div className="shrink-0 scale-90 sm:scale-100 origin-left">
-          <Logo variant="primary" size="md" />
+        <div className="shrink-0 origin-left flex items-center">
+          <Logo variant="primary" size="sm" className="sm:hidden" />
+          <Logo variant="primary" size="md" className="hidden sm:inline-flex" />
         </div>
 
         {/* Desktop Main Navigation */}

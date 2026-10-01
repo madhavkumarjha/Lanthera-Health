@@ -8,12 +8,12 @@ export function EmergencyPill() {
   return (
     <Link
       to="/emergency"
-      className="emergency-pill inline-flex items-center gap-1.5 sm:gap-2 bg-[var(--emergency)] text-white px-2.5 py-1 sm:px-4 sm:py-2 rounded-full font-semibold text-[11px] sm:text-xs uppercase tracking-wider hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-white shrink-0 shadow-md whitespace-nowrap"
+      className="emergency-pill inline-flex items-center gap-1 sm:gap-2 bg-[var(--emergency)] text-white px-2 py-1 sm:px-4 sm:py-2 rounded-full font-semibold text-[11px] sm:text-xs uppercase tracking-wider hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-white shrink-0 shadow-md whitespace-nowrap"
       aria-label="Emergency care 24 by 7 - click for immediate instructions"
     >
       <PhoneCall className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-pulse shrink-0" />
-      <span className="hidden min-[420px]:inline">{t('emergencyCall', 'Emergency 24×7')}</span>
-      <span className="min-[420px]:hidden">24×7</span>
+      <span className="hidden min-[480px]:inline">{t('emergencyCall', 'Emergency 24×7')}</span>
+      <span className="min-[480px]:hidden">24×7</span>
     </Link>
   );
 }

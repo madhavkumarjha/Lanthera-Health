@@ -20,7 +20,7 @@ export function RootLayout() {
   const [searchTerm, setSearchTerm] = useState('');
 
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)] transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-[var(--bg)] text-[var(--text)] transition-colors duration-300 w-full max-w-full overflow-x-hidden relative">
       {/* Session Ignition Loader */}
       <Loader />
 
@@ -45,7 +45,7 @@ export function RootLayout() {
       </a>
 
       {/* Main Content Area with Page Transition */}
-      <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
+      <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none w-full max-w-full overflow-x-hidden">
         <PageTransition>
           <Outlet />
         </PageTransition>

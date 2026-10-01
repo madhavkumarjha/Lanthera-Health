@@ -9,7 +9,7 @@ export function PortalLayout() {
   const activeTab = searchParams.get('tab') || 'report';
 
   return (
-    <div className="portal-layout min-h-screen flex flex-col md:flex-row bg-[var(--bg)]">
+    <div className="portal-layout min-h-screen flex flex-col md:flex-row bg-[var(--bg)] w-full max-w-full overflow-x-hidden">
       {/* Branded Portal Navigation Sidebar */}
       <aside className="w-full md:w-64 border-b md:border-b-0 md:border-r border-[var(--line)] bg-[var(--surface-2)] p-6 flex flex-col gap-6 shrink-0 shadow-lg">
         <div className="flex flex-col gap-1">

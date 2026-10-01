@@ -7,9 +7,9 @@ export const HeroVisualCard: React.FC = () => {
   const isHi = locale === 'hi';
 
   return (
-    <div className="relative rounded-[var(--radius-lg)] overflow-hidden border border-[var(--accent)]/30 bg-[var(--surface-2)] shadow-2xl group hover-glow transition-all duration-500">
+    <div className="relative rounded-[var(--radius-lg)] overflow-hidden border border-[var(--accent)]/30 bg-[var(--surface-2)] shadow-2xl group hover-glow transition-all duration-500 w-full max-w-full">
       {/* Ambient Pulsing Glow Backdrop */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-[var(--accent)]/20 via-[var(--sage)]/10 to-[var(--accent)]/20 blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-700" />
+      <div className="absolute -inset-1 bg-gradient-to-r from-[var(--accent)]/20 via-[var(--sage)]/10 to-[var(--accent)]/20 blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-700 pointer-events-none" />
 
       {/* Main Graphic Container */}
       <div className="relative z-10 p-6 sm:p-8 min-h-[420px] sm:min-h-[480px] flex flex-col justify-between bg-gradient-to-b from-[var(--surface)] via-[var(--surface-2)] to-[var(--bg)]">
@@ -38,7 +38,7 @@ export const HeroVisualCard: React.FC = () => {
           </div>
 
           {/* On-Duty Medical Specialists Badge Stack */}
-          <div className="mt-6 flex items-center gap-3 bg-[var(--surface)]/90 backdrop-blur-md px-4 py-2.5 rounded-full border border-[var(--line)] shadow-lg">
+          <div className="mt-6 flex items-center gap-2 sm:gap-3 bg-[var(--surface)]/90 backdrop-blur-md px-3 sm:px-4 py-2 sm:py-2.5 rounded-full border border-[var(--line)] shadow-lg max-w-full overflow-hidden">
             <div className="flex -space-x-2">
               <div className="w-8 h-8 rounded-full bg-[var(--accent)] text-[var(--accent-ink)] font-bold font-display text-xs flex items-center justify-center border-2 border-[var(--surface)]">
                 EL

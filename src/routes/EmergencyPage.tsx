@@ -20,7 +20,7 @@ export default function EmergencyPage() {
         </p>
         <a
           href={`tel:${siteConfig.emergencyNumber}`}
-          className="inline-flex items-center gap-3 bg-[var(--emergency)] text-white text-2xl sm:text-3xl font-mono font-bold px-8 py-4 rounded-full shadow-lg hover:opacity-95 transition-opacity"
+          className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-[var(--emergency)] text-white text-xl sm:text-2xl md:text-3xl font-mono font-bold px-4 sm:px-8 py-3 sm:py-4 rounded-full shadow-lg hover:opacity-95 transition-opacity max-w-full overflow-hidden"
         >
           <PhoneCall className="w-6 h-6" />
           <span>{siteConfig.emergencyNumber}</span>

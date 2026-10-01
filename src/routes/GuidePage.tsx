@@ -499,7 +499,7 @@ Indicative • General information • Not medical, legal or financial advice.`;
           <p className="text-xs text-[var(--text-muted)]">
             The Lantern Guide evaluates inputs transparently using deterministic rule priorities.
           </p>
-          <div className="border border-[var(--line)] rounded-[var(--radius-sm)] overflow-hidden">
+          <div className="border border-[var(--line)] rounded-[var(--radius-sm)] overflow-x-auto max-w-full">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
                 <tr className="bg-[var(--surface-2)] border-b border-[var(--line)] font-mono">
